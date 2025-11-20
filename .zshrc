@@ -100,6 +100,8 @@ alias ohmyzsh="$EDITOR  ~/.oh-my-zsh"
 alias zshconfig="$EDITOR ~/.zshrc"
 alias nvimconfig="$EDITOR ~/.config/nvim"
 alias rezsh="source ~/.zshrc"
+alias config='/usr/bin/git --git-dir=/Users/scarab5q/.cfg/ --work-tree=/Users/scarab5q'
+alias lazyconfig='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
 
 
 eval "$(direnv hook zsh)"
@@ -111,4 +113,11 @@ eval "$(zoxide init zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-alias config='/usr/bin/git --git-dir=/Users/scarab5q/.cfg/ --work-tree=/Users/scarab5q'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+fe() { 
+  /usr/bin/git --git-dir=/Users/scarab5q/.cfg/ --work-tree=/Users/scarab5q ls-tree --full-tree -r --full-name HEAD --format $HOME'/%(path)' | fzf -m --preview='bat --color=always {}' --bind 'enter:become(nvim {+})'; 
+}
