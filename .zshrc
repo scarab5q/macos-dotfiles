@@ -102,8 +102,16 @@ alias nvimconfig="$EDITOR ~/.config/nvim"
 alias rezsh="source ~/.zshrc"
 alias config='/usr/bin/git --git-dir=/Users/scarab5q/.cfg/ --work-tree=/Users/scarab5q'
 alias lazyconfig='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
+alias lc='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
+alias lg='lazygit'
 alias branches='git branch | grep -v "^\*" | fzf --height=20% --reverse --info=inline | xargs git checkout'
-
+alias dall='direnv allow'
+alias dedit='direnv edit'
+alias rd='~/repos/arrow/scripts/start-docker.sh'
+alias rdb='~/repos/arrow/scripts/start-docker.sh --build'
+alias dockerstopall='docker stop $(docker ps -q) && docker rm $(docker ps -aq)'
+alias lzd='lazydocker'
+alias ghd='gh dash'
 
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
@@ -122,4 +130,102 @@ export NVM_DIR="$HOME/.nvm"
 cf() { 
   /usr/bin/git --git-dir=/Users/scarab5q/.cfg/ --work-tree=/Users/scarab5q ls-tree --full-tree -r --full-name HEAD --format $HOME'/%(path)' | fzf -m --preview='bat --color=always {}' --bind 'enter:become(nvim {+})'; 
 }
-eval "$(zellij setup --generate-auto-start zsh)"
+if [[ $TERM_PROGRAM == iTerm.app ]] 
+then
+  eval "$(zellij setup --generate-auto-start zsh)"
+fi
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+source /Users/scarab5q/.config/broot/launcher/bash/br
+
+function aws-mfa() {
+  local base_profile="default"
+  local region="eu-west-2"
+  local duration="43200"
+  local serial=""
+  local code out ak sk tok exp
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -b) base_profile="$2"; shift 2 ;;
+      -r) region="$2"; shift 2 ;;
+      -d) duration="$2"; shift 2 ;;
+      -s) serial="$2"; shift 2 ;;
+      -h|--help)
+        echo "usage: aws-mfa [-b baseProfile] [-r region] [-d durationSeconds] [-s mfaSerialArn]" >&2
+        return 0
+        ;;
+      *) echo "Unknown arg: $1" >&2; return 2 ;;
+    esac
+  done
+
+  command -v aws >/dev/null || { echo "aws not found" >&2; return 1; }
+  command -v python3 >/dev/null || { echo "python3 not found" >&2; return 1; }
+
+  if [[ -z "$serial" ]]; then
+    serial="$(aws iam list-mfa-devices --profile "$base_profile" --query 'MFADevices[0].SerialNumber' --output text 2>/dev/null)"
+    [[ -n "$serial" && "$serial" != "None" ]] || { echo "No MFA device found; pass -s <mfa-serial-arn>" >&2; return 1; }
+  fi
+
+  # zsh read prompt differs from bash
+  if [[ -n "${ZSH_VERSION-}" ]]; then
+    read -r "code?MFA code for $serial: "
+  else
+    read -r -p "MFA code for $serial: " code
+  fi
+
+  out="$(aws sts get-session-token \
+    --profile "$base_profile" \
+    --serial-number "$serial" \
+    --token-code "$code" \
+    --duration-seconds "$duration" 2>/dev/null)" || {
+      echo "Failed to get session token (bad MFA code? missing permission? wrong profile?)" >&2
+      return 1
+    }
+
+  ak="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["Credentials"]["AccessKeyId"])' <<<"$out")"
+  sk="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["Credentials"]["SecretAccessKey"])' <<<"$out")"
+  tok="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["Credentials"]["SessionToken"])' <<<"$out")"
+  exp="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["Credentials"]["Expiration"])' <<<"$out")"
+
+  export AWS_ACCESS_KEY_ID="$ak"
+  export AWS_SECRET_ACCESS_KEY="$sk"
+  export AWS_SESSION_TOKEN="$tok"
+  export AWS_REGION="$region"
+  export AWS_DEFAULT_REGION="$region"
+  export AWS_MFA_SESSION_EXPIRATION="$exp"
+
+  echo "AWS MFA session active (expires: $exp)"
+}
+
+
+# AWS CLI wrapper with automatic MFA authentication
+function awS() {
+    # local MFA_ARN="arn:aws:iam::144392380677:mfa/pixel7"
+    local MFA_ARN="arn:aws:iam::144392380677:mfa/pixel-9"
+    
+    # Run the actual aws command
+    command aws "$@"
+    local exit_code=$?
+    
+    # Check if it failed due to access denied (likely MFA issue)
+    if [[ $exit_code -eq 254 ]]; then
+        awsMfaSession
+        echo ""
+        echo "🔄 Retrying command..."
+        echo ""
+        
+        # Retry the original command
+        command aws "$@"
+        return $?
+    fi
+    
+    return $exit_code
+}
