@@ -41,7 +41,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -72,9 +72,18 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git direnv fzf-tab vi-mode)
 
+# Needed for just autocomplete, but will pull in all of brew
+# https://github.com/casey/just#shell-completion-scripts
+# Init Homebrew, which adds environment variables
+eval "$(brew shellenv)"
+# Add Homebrew's site-functions to fpath
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -112,6 +121,8 @@ alias rdb='~/repos/arrow/scripts/start-docker.sh --build'
 alias dockerstopall='docker stop $(docker ps -q) && docker rm $(docker ps -aq)'
 alias lzd='lazydocker'
 alias ghd='gh dash'
+alias jed='just --edit'
+alias ls='eza'
 
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
@@ -206,26 +217,4 @@ function aws-mfa() {
 }
 
 
-# AWS CLI wrapper with automatic MFA authentication
-function awS() {
-    # local MFA_ARN="arn:aws:iam::144392380677:mfa/pixel7"
-    local MFA_ARN="arn:aws:iam::144392380677:mfa/pixel-9"
-    
-    # Run the actual aws command
-    command aws "$@"
-    local exit_code=$?
-    
-    # Check if it failed due to access denied (likely MFA issue)
-    if [[ $exit_code -eq 254 ]]; then
-        awsMfaSession
-        echo ""
-        echo "🔄 Retrying command..."
-        echo ""
-        
-        # Retry the original command
-        command aws "$@"
-        return $?
-    fi
-    
-    return $exit_code
-}
+
