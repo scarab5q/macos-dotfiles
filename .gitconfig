@@ -1,0 +1,15 @@
+[user]
+	name = Jack Denny
+	email = jackmdenny@gmail.com
+[alias]
+  submodule-init-all = submodule update --init --recursive
+  unstage = restore --staged
+  discard = checkout -- 
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
