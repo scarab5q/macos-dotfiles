@@ -9,7 +9,7 @@ export REPOS=/Users/scarab5q/repos
 export ARROW=$REPOS/arrow
 export BACKEND=$ARROW/apps/backend
 export ARQ=$REPOS/arq
-export PUSH_FORMAT_CHECK=1
+export PUSH_FORMAT_CHECK=0
 export RIPGREP_CONFIG_PATH=/Users/scarab5q/.ripgreprc
 
 

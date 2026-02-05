@@ -108,7 +108,7 @@ alias zshconfig="$EDITOR ~/.zshrc"
 alias ohmyzsh="$EDITOR  ~/.oh-my-zsh"
 alias zshconfig="$EDITOR ~/.zshrc"
 alias nvimconfig="$EDITOR ~/.config/nvim"
-alias rezsh="source ~/.zshrc"
+alias rezsh="source ~/.zprofile && source ~/.zshrc"
 alias config='/usr/bin/git --git-dir=/Users/scarab5q/.cfg/ --work-tree=/Users/scarab5q'
 alias lazyconfig='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias lc='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
