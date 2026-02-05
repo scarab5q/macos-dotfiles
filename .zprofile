@@ -1,6 +1,7 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export EDITOR="nvim"
-export NPM_TOKEN="REDACTED_NPM_TOKEN"
+# Source secrets from gitignored file
+[ -f ~/.secrets ] && source ~/.secrets
 export PATH=~/scripts:$PATH
 export PATH="/Users/scarab5q/.local/bin:$PATH"
 export HISTORY_IGNORE="(doppler secrets set*)"
