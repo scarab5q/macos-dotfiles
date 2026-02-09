@@ -1,3 +1,6 @@
+# XDG Base Directory (used by nushell, and many other tools)
+export XDG_CONFIG_HOME="$HOME/.config"
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export EDITOR="nvim"
 # Source secrets from gitignored file
