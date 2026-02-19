@@ -123,6 +123,7 @@ alias lzd='lazydocker'
 alias ghd='gh dash'
 alias jed='just --edit'
 alias ls='eza'
+alias zr='zellij run --'
 
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
