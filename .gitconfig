@@ -8,6 +8,10 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  rab = rebase --abort
+  rco = rebase --continue
+  untemp = "!f() { if [ \"$(git log -1 --format=%s)\" = \"temp\" ]; then git reset --soft HEAD~1; else echo 'Last commit was not a temp commit'; fi; }; f"
+  uncommit = "!f() { git reset --soft \"${1:-HEAD~1}\"; }; f"
 
 [push]
 	autoSetupRemote = true
