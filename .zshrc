@@ -156,6 +156,21 @@ function y() {
 
 source /Users/scarab5q/.config/broot/launcher/bash/br
 
+function zoxide_fzf() {
+    local orig_buffer=$LBUFFER
+    local selection
+    selection=$(zoxide query --list | fzf --height 40% --reverse --border) || {
+        LBUFFER=$orig_buffer
+        zle redisplay
+        return 0
+    }
+
+    if [[ -n "$selection" ]]; then
+        LBUFFER+="$selection"
+        zle redisplay
+    fi
+}
+
 function aws-mfa() {
   local base_profile="default"
   local region="eu-west-2"
@@ -218,3 +233,7 @@ function aws-mfa() {
 
 
 
+
+# Added by GitButler installer
+export PATH="/Users/scarab5q/.local/bin:$PATH"
+eval "$(but completions zsh)"
