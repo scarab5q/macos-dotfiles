@@ -134,6 +134,54 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
+        bind "Ctrl h" {
+            MessagePlugin "file:/Users/scarab5q/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "left";
+            };
+        }
+        bind "Ctrl j" {
+            MessagePlugin "file:/Users/scarab5q/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "down";
+            };
+        }
+        bind "Ctrl k" {
+            MessagePlugin "file:/Users/scarab5q/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "up";
+            };
+        }
+        bind "Ctrl l" {
+            MessagePlugin "file:/Users/scarab5q/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "right";
+            };
+        }
+        bind "Alt h" {
+            MessagePlugin "file:/Users/scarab5q/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "resize";
+                payload "left";
+            };
+        }
+        bind "Alt j" {
+            MessagePlugin "file:/Users/scarab5q/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "resize";
+                payload "down";
+            };
+        }
+        bind "Alt k" {
+            MessagePlugin "file:/Users/scarab5q/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "resize";
+                payload "up";
+            };
+        }
+        bind "Alt l" {
+            MessagePlugin "file:/Users/scarab5q/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "resize";
+                payload "right";
+            };
+        }
         bind "Alt left" { MoveFocusOrTab "left"; }
         bind "Alt down" { MoveFocus "down"; }
         bind "Alt up" { MoveFocus "up"; }
@@ -145,19 +193,12 @@ keybinds clear-defaults=true {
         bind "Alt ]" { NextSwapLayout; }
         bind "Alt Shift f" { ToggleFloatingPanes; }
         bind "Ctrl g" { SwitchToMode "locked"; }
-        bind "Alt h" { MoveFocusOrTab "left"; }
         bind "Alt i" { MoveTab "left"; }
-        bind "Alt j" { MoveFocus "down"; }
-        bind "Alt k" { MoveFocus "up"; }
-        bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
         bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
         bind "Ctrl q" { Quit; }
-    }
-    shared_except "locked" "move" {
-        bind "Ctrl h" { SwitchToMode "move"; }
     }
     shared_except "locked" "session" {
         bind "Ctrl m" { SwitchToMode "session"; }
@@ -176,6 +217,9 @@ keybinds clear-defaults=true {
     }
     shared_except "locked" "resize" {
         bind "Ctrl n" { SwitchToMode "resize"; }
+    }
+    shared_except "locked" "move" {
+        bind "Alt m" { SwitchToMode "move"; }
     }
     shared_except "normal" "locked" "entersearch" {
         bind "enter" { SwitchToMode "normal"; }
@@ -247,6 +291,19 @@ keybinds clear-defaults=true {
 // Plugin aliases - can be used to change the implementation of Zellij
 // changing these requires a restart to take effect
 plugins {
+    // Define the "autolock" plugin.
+    // autolock location="file:~/.config/zellij/plugins/zellij-autolock.wasm" {
+    //     // Enabled at start?
+    //     is_enabled true
+    //     // Lock when any open these programs open.
+    //     triggers "nvim|vim|git|fzf|zoxide|atuin"
+    //     // Reaction to input occurs after this many seconds. (default=0.3)
+    //     // (An existing scheduled reaction prevents additional reactions.)
+    //     reaction_seconds "0.3"
+    //     // Print to Zellij log? (default=false)
+    //     print_to_log true
+    // }
+    //...
     about location="zellij:about"
     compact-bar location="zellij:compact-bar"
     configuration location="zellij:configuration"
@@ -267,6 +324,7 @@ plugins {
 // eg. "file:/path/to/my-plugin.wasm"
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
+    // autolock
 }
 web_client {
     font "monospace"
@@ -299,9 +357,9 @@ web_client {
 // default_cwd "/tmp"
  
 // The name of the default layout to load on startup
-// Default: "default"
+Default: "default"
 // 
-default_layout "vertical-tabs-left"
+// default_layout "vertical-tabs-left"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)
