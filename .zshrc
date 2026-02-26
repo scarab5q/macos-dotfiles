@@ -124,6 +124,7 @@ alias ghd='gh dash'
 alias jed='just --edit'
 alias ls='eza'
 alias zr='zellij run --'
+alias ecl="emacsclient -a '' -c"
 
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
@@ -238,3 +239,15 @@ function aws-mfa() {
 # Added by GitButler installer
 export PATH="/Users/scarab5q/.local/bin:$PATH"
 eval "$(but completions zsh)"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/scarab5q/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
