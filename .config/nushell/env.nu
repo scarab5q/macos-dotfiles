@@ -40,10 +40,6 @@ $env.PATH = (
     | uniq
 )
 
-# Source secrets if exists (nushell equivalent)
-# Note: Create ~/.config/nu/secrets.nu for sensitive values
-# and source it here with: source ~/.config/nu/secrets.nu
-
 # SSH agent setup - reuses existing agent or starts new one
 # (avoids spawning multiple agents per terminal)
 do --env {
@@ -51,7 +47,6 @@ do --env {
 
     if ($ssh_agent_file | path exists) {
         let ssh_agent_env = (open $ssh_agent_file)
-        # On macOS, check if socket exists; on Linux, check /proc
         let agent_alive = if ($nu.os-info.name == "macos") {
             ($ssh_agent_env.SSH_AUTH_SOCK | path exists)
         } else {
@@ -65,7 +60,6 @@ do --env {
         }
     }
 
-    # Start new agent (use -c for csh-style output which is easier to parse)
     let ssh_agent_env = (^ssh-agent -c
         | lines
         | first 2
@@ -75,3 +69,6 @@ do --env {
     load-env $ssh_agent_env
     $ssh_agent_env | save --force $ssh_agent_file
 }
+
+# Zoxide init (must be at end of env.nu)
+zoxide init nushell | save -f ~/.zoxide.nu

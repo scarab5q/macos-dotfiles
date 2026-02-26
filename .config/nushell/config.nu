@@ -1,5 +1,6 @@
 # Nushell Configuration
-# Mirrors .zshrc settings
+
+$env.config.edit_mode = 'vi'
 
 # ============================================================
 # ALIASES
@@ -7,15 +8,12 @@
 
 # Config editing
 alias zshconfig = nvim ~/.zshrc
-alias nuconfig = nvim ~/.config/nu/config.nu
+alias nuconfig = nvim ~/.config/nushell/config.nu
 alias nvimconfig = nvim ~/.config/nvim
 alias ohmyzsh = nvim ~/.oh-my-zsh
 
 # Reload config
-def renu [] {
-    source ~/.config/nu/env.nu
-    source ~/.config/nu/config.nu
-}
+def renu [] { exec nu }
 
 # Dotfiles management (bare git repo)
 alias config = git --git-dir=($env.HOME | path join ".cfg") --work-tree=$env.HOME
@@ -101,7 +99,6 @@ def aws-mfa [
     --duration (-d): int = 43200             # Session duration in seconds
     --serial (-s): string = ""               # MFA serial ARN (auto-detected if not provided)
 ] {
-    # Get MFA serial if not provided
     let mfa_serial = if ($serial | is-empty) {
         let detected = (aws iam list-mfa-devices --profile $base_profile --query 'MFADevices[0].SerialNumber' --output text | str trim)
         if ($detected | is-empty) or $detected == "None" {
@@ -112,10 +109,8 @@ def aws-mfa [
         $serial
     }
 
-    # Prompt for MFA code
     let code = (input $"MFA code for ($mfa_serial): ")
 
-    # Get session token
     let result = (aws sts get-session-token
         --profile $base_profile
         --serial-number $mfa_serial
@@ -123,7 +118,6 @@ def aws-mfa [
         --duration-seconds $duration
         | from json)
 
-    # Export credentials
     $env.AWS_ACCESS_KEY_ID = $result.Credentials.AccessKeyId
     $env.AWS_SECRET_ACCESS_KEY = $result.Credentials.SecretAccessKey
     $env.AWS_SESSION_TOKEN = $result.Credentials.SessionToken
@@ -138,10 +132,17 @@ def aws-mfa [
 # INTEGRATIONS
 # ============================================================
 
-# Zoxide (cd replacement) - use z/zi commands
-source ~/.config/nu/zoxide.nu
+# Starship prompt
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
-# Direnv hook (requires nushell 0.104+)
+# Zoxide (cd replacement)
+source ~/.zoxide.nu
+
+# Cargo/Rust
+source ~/.cargo/env.nu
+
+# Direnv hook (runs on directory change)
 $env.config.hooks.env_change.PWD = $env.config.hooks.env_change.PWD? | default []
 $env.config.hooks.env_change.PWD ++= [{||
     if (which direnv | is-empty) { return }
@@ -152,15 +153,22 @@ $env.config.hooks.env_change.PWD ++= [{||
     }
 }]
 
-# Starship prompt (optional) - run: starship init nu | save -f ~/.config/nu/starship.nu
-# source ~/.config/nu/starship.nu
-
-# Broot - check if nushell config exists
-# source ~/.config/broot/launcher/nushell/br
+# Atuin shell history
+source ~/.local/share/atuin/init.nu
 
 # ============================================================
 # COMPLETIONS
 # ============================================================
 
 # Just completions
-source ~/.config/nu/just-completions.nu
+source ~/.config/nushell/just-completions.nu
+
+# Git completions (from nu_scripts)
+use ~/.config/nushell/nu_scripts/custom-completions/git/git-completions.nu *
+
+# ============================================================
+# PATH ADDITIONS (must be at end to survive direnv/atuin)
+# ============================================================
+
+# Worktree scripts
+$env.PATH = ($env.PATH | prepend ($env.HOME | path join "masref/core/bin"))
