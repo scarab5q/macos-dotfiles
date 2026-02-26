@@ -1,7 +1,10 @@
 return {
 
   -- Disable LazyVim's built-in mini.surround to avoid conflicts
-  { "echasnovski/mini.surround", enabled = false },
+  {
+    "nvim-mini/mini.surround",
+    enabled = false,
+  },
 
   -- Install nvim-surround with vim-surround keybindings
   {
