@@ -1,6 +1,13 @@
 # Nushell Configuration
 
 $env.config.edit_mode = 'vi'
+$env.config.keybindings = ($env.config.keybindings | append {
+    name: clear_screen
+    modifier: control
+    keycode: char_y
+    mode: [emacs vi_normal vi_insert]
+    event: { send: ClearScreen }
+})
 
 # ============================================================
 # ALIASES
@@ -16,9 +23,9 @@ alias ohmyzsh = nvim ~/.oh-my-zsh
 def renu [] { exec nu }
 
 # Dotfiles management (bare git repo)
-alias config = git --git-dir=($env.HOME | path join ".cfg") --work-tree=$env.HOME
-alias lazyconfig = lazygit --git-dir=($env.HOME | path join ".cfg") --work-tree=$env.HOME
-alias lc = lazygit --git-dir=($env.HOME | path join ".cfg") --work-tree=$env.HOME
+def --wrapped cfg [...args] { ^git $"--git-dir=($env.HOME)/.cfg" $"--work-tree=($env.HOME)" ...$args }
+def --wrapped lazyconfig [...args] { lazygit $"--git-dir=($env.HOME)/.cfg" $"--work-tree=($env.HOME)" ...$args }
+alias lc = lazyconfig
 
 # Lazygit
 alias lg = lazygit
@@ -59,8 +66,14 @@ alias ghd = gh dash
 # Just
 alias jed = just --edit
 
-# Use eza for ls
+# Eza (ls replacement)
 alias ls = eza
+
+# Zellij
+alias zr = zellij run --
+
+# Emacs
+def ecl [...args] { emacsclient -a "" -c ...$args }
 
 # ============================================================
 # CUSTOM FUNCTIONS
@@ -68,12 +81,8 @@ alias ls = eza
 
 # Dotfiles picker with fzf (cf command)
 def cf [] {
-    let files = (git --git-dir=($env.HOME | path join ".cfg") --work-tree=$env.HOME ls-tree --full-tree -r --full-name HEAD
-        | lines
-        | each { |line|
-            $line | split column "\t" | get column2.0 | $env.HOME | path join $in
-        }
-        | str join "\n"
+    let fmt = $env.HOME + '/%(path)'
+    let files = (git --git-dir=($env.HOME | path join ".cfg") --work-tree=$env.HOME ls-tree --full-tree -r --full-name HEAD --format $fmt
         | fzf -m --preview 'bat --color=always {}'
         | lines)
     if ($files | is-not-empty) {
@@ -156,6 +165,9 @@ $env.config.hooks.env_change.PWD ++= [{||
 # Atuin shell history
 source ~/.local/share/atuin/init.nu
 
+# Broot file manager
+source ~/.config/nushell/broot.nu
+
 # ============================================================
 # COMPLETIONS
 # ============================================================
@@ -170,5 +182,18 @@ use ~/.config/nushell/nu_scripts/custom-completions/git/git-completions.nu *
 # PATH ADDITIONS (must be at end to survive direnv/atuin)
 # ============================================================
 
+# pnpm global installs
+$env.PNPM_HOME = ($env.HOME | path join "Library/pnpm")
+$env.PATH = ($env.PATH | prepend $env.PNPM_HOME)
+
 # Worktree scripts
 $env.PATH = ($env.PATH | prepend ($env.HOME | path join "masref/core/bin"))
+
+# ============================================================
+# ZELLIJ AUTO-START (iTerm only)
+# ============================================================
+
+if ($env.TERM_PROGRAM? == "iTerm.app") and ($env.ZELLIJ? | is-empty) {
+    zellij
+    if ($env.ZELLIJ_AUTO_EXIT? == "true") { exit }
+}

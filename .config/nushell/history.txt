@@ -209,3 +209,34 @@ ps | get name where =~ window
 ps | get name | where name =~ window
 cf
 exit
+cf
+nvim ~/.config/nushell/config.nu
+ls
+z arrow
+but status
+git status
+ls
+config nu
+config status
+which config
+config show
+config nu
+clear
+config --help
+cfg status
+renu
+exit
+clear
+cf
+cfg status
+ls
+exit
+renue
+exit
+cf
+exit
+cf
+cfg status
+cf
+cfg status
+lc
