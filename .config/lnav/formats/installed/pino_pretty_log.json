@@ -1,0 +1,54 @@
+{
+    "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "pino_pretty_log": {
+        "title": "Pino Pretty Log",
+        "description": "Pino logs formatted with pino-pretty (with ANSI codes stripped)",
+        "regex": {
+            "std": {
+                "pattern": "^\\[(?<timestamp>\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\]\\s+(?<level>\\w+)\\s+\\((?<pid>\\d+)\\):\\s+(?<body>.*)"
+            },
+            "time-only": {
+                "pattern": "^\\[(?<timestamp>\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\]\\s+(?<level>\\w+)\\s+\\((?<pid>\\d+)\\):\\s+(?<body>.*)"
+            }
+        },
+        "level-field": "level",
+        "level": {
+            "fatal": "FATAL",
+            "error": "ERROR",
+            "warning": "WARN",
+            "info": "INFO",
+            "debug": "DEBUG",
+            "trace": "TRACE"
+        },
+        "value": {
+            "pid": {
+                "kind": "integer",
+                "identifier": true
+            }
+        },
+        "sample": [
+            {
+                "line": "[2026-02-26 11:32:21.382] INFO (29556): AppVersionController {/app-version}:",
+                "level": "info"
+            },
+            {
+                "line": "[18:06:00.033] INFO (44779): [handlePaymentLinkExpiry] Starting payment link expiry process",
+                "level": "info"
+            },
+            {
+                "line": "[18:06:00.088] DEBUG (44779): Redlite Failure Retry tick=2026-02-25T18:06:00.000Z",
+                "level": "debug"
+            },
+            {
+                "line": "[18:05:56.733] ERROR (44779): Connection failed to broker localhost:9093",
+                "level": "error"
+            }
+        ],
+        "timestamp-format": [
+            "%Y-%m-%d %H:%M:%S.%L",
+            "%H:%M:%S.%L"
+        ],
+        "body-field": "body",
+        "ordered-by-time": true
+    }
+}
