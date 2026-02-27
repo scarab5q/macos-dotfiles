@@ -175,6 +175,9 @@ source ~/.config/nushell/broot.nu
 # Just completions
 source ~/.config/nushell/just-completions.nu
 
+# ${UserConfigDir}/nushell/config.nu
+source $"($nu.cache-dir)/carapace.nu"
+
 # Git completions (from nu_scripts)
 use ~/.config/nushell/nu_scripts/custom-completions/git/git-completions.nu *
 

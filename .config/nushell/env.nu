@@ -40,6 +40,10 @@ $env.PATH = (
     | uniq
 )
 
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+mkdir $"($nu.cache-dir)"
+carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
+
 # SSH agent setup - reuses existing agent or starts new one
 # (avoids spawning multiple agents per terminal)
 do --env {
