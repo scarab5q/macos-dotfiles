@@ -189,6 +189,9 @@ $env.PATH = ($env.PATH | prepend $env.PNPM_HOME)
 # Worktree scripts
 $env.PATH = ($env.PATH | prepend ($env.HOME | path join "masref/core/bin"))
 
+# Atuin
+$env.PATH = ($env.PATH | prepend ($env.HOME | path join ".atuin/bin"))
+
 # ============================================================
 # ZELLIJ AUTO-START (iTerm only)
 # ============================================================
