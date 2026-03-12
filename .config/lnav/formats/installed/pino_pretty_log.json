@@ -2,27 +2,35 @@
     "$schema": "https://lnav.org/schemas/format-v1.schema.json",
     "pino_pretty_log": {
         "title": "Pino Pretty Log",
-        "description": "Pino logs formatted with pino-pretty (with ANSI codes stripped)",
+        "description": "Pino logs formatted with pino-pretty, plus NestJS default format",
         "regex": {
             "std": {
                 "pattern": "^\\[(?<timestamp>\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\]\\s+(?<level>\\w+)\\s+\\((?<pid>\\d+)\\):\\s+(?<body>.*)"
             },
             "time-only": {
                 "pattern": "^\\[(?<timestamp>\\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\]\\s+(?<level>\\w+)\\s+\\((?<pid>\\d+)\\):\\s+(?<body>.*)"
+            },
+            "nestjs": {
+                "pattern": "^\\[Nest\\]\\s+(?<pid>\\d+)\\s+-\\s+(?<timestamp>\\d{2}/\\d{2}/\\d{4},\\s+\\d{2}:\\d{2}:\\d{2})\\s+(?<level>\\w+)\\s+\\[(?<module>[^\\]]+)\\]\\s+(?<body>.*)"
             }
         },
+        "json": false,
         "level-field": "level",
         "level": {
             "fatal": "FATAL",
             "error": "ERROR",
             "warning": "WARN",
-            "info": "INFO",
+            "info": "INFO|LOG",
             "debug": "DEBUG",
             "trace": "TRACE"
         },
         "value": {
             "pid": {
                 "kind": "integer",
+                "identifier": true
+            },
+            "module": {
+                "kind": "string",
                 "identifier": true
             }
         },
@@ -42,13 +50,114 @@
             {
                 "line": "[18:05:56.733] ERROR (44779): Connection failed to broker localhost:9093",
                 "level": "error"
+            },
+            {
+                "line": "[Nest] 8990  - 09/03/2026, 13:43:26     LOG [InstanceLoader] PrismaModule dependencies initialized +0ms",
+                "level": "info"
             }
         ],
         "timestamp-format": [
             "%Y-%m-%d %H:%M:%S.%L",
-            "%H:%M:%S.%L"
+            "%H:%M:%S.%L",
+            "%d/%m/%Y, %H:%M:%S"
         ],
         "body-field": "body",
         "ordered-by-time": true
+    },
+    "kafkajs_json_log": {
+        "title": "KafkaJS JSON Log",
+        "description": "KafkaJS JSON log lines with ISO timestamp",
+        "json": true,
+        "line-format": [
+            { "field": "timestamp" },
+            " ",
+            { "field": "level" },
+            " [",
+            { "field": "logger" },
+            "] ",
+            { "field": "message" }
+        ],
+        "level-field": "level",
+        "level": {
+            "error": "ERROR",
+            "warning": "WARN",
+            "info": "INFO",
+            "debug": "DEBUG"
+        },
+        "timestamp-field": "timestamp",
+        "body-field": "message",
+        "ordered-by-time": true,
+        "value": {
+            "logger": {
+                "kind": "string",
+                "identifier": true
+            },
+            "broker": {
+                "kind": "string",
+                "identifier": true
+            },
+            "groupId": {
+                "kind": "string",
+                "identifier": true
+            },
+            "clientId": {
+                "kind": "string",
+                "identifier": true
+            },
+            "error": {
+                "kind": "string"
+            }
+        },
+        "sample": [
+            {
+                "line": "{\"level\":\"ERROR\",\"timestamp\":\"2026-03-09T16:16:59.771Z\",\"logger\":\"kafkajs\",\"message\":\"[Connection] Response Metadata\",\"broker\":\"localhost:9093\"}",
+                "level": "error"
+            },
+            {
+                "line": "{\"level\":\"INFO\",\"timestamp\":\"2026-03-09T16:17:01.963Z\",\"logger\":\"kafkajs\",\"message\":\"[Consumer] Starting\",\"groupId\":\"transaction-queue\"}",
+                "level": "info"
+            }
+        ]
+    },
+    "pino_json_log": {
+        "title": "Pino Raw JSON Log",
+        "description": "Raw pino JSON log lines with epoch timestamp",
+        "json": true,
+        "line-format": [
+            { "field": "level" },
+            " [",
+            { "field": "context" },
+            "] ",
+            { "field": "message" }
+        ],
+        "level-field": "level",
+        "level": {
+            "fatal": "60|fatal",
+            "error": "50|error",
+            "warning": "40|warn",
+            "info": "30|info",
+            "debug": "20|debug",
+            "trace": "10|trace"
+        },
+        "timestamp-field": "time",
+        "timestamp-format": ["%E"],
+        "body-field": "message",
+        "ordered-by-time": true,
+        "value": {
+            "context": {
+                "kind": "string",
+                "identifier": true
+            },
+            "event": {
+                "kind": "string",
+                "identifier": true
+            }
+        },
+        "sample": [
+            {
+                "line": "{\"level\":\"warn\",\"time\":1773073149711,\"context\":\"ProcessCrash\",\"event\":\"SIGTERM\",\"message\":\"Received SIGTERM signal, shutting down gracefully\"}",
+                "level": "warning"
+            }
+        ]
     }
 }

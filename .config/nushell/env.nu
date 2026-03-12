@@ -29,14 +29,18 @@ $env.BUN_INSTALL = ($env.HOME | path join ".bun")
 $env.NVM_DIR = ($env.HOME | path join ".nvm")
 
 # PATH setup
+$env.GOPATH = ($env.HOME | path join "go")
+
 $env.PATH = (
     $env.PATH
     | split row (char esep)
+    | prepend "/usr/local/bin"
     | prepend "/opt/homebrew/bin"
     | prepend "/opt/homebrew/sbin"
     | prepend ($env.HOME | path join ".local/bin")
     | prepend ($env.HOME | path join "scripts")
     | prepend ($env.BUN_INSTALL | path join "bin")
+    | prepend ($env.GOPATH | path join "bin")
     | uniq
 )
 

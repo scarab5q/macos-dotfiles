@@ -48,6 +48,12 @@ def branches [] {
 alias dall = direnv allow
 alias dedit = direnv edit
 
+
+# git / but
+alias gist = git status
+alias bust = but status
+alias bu = but
+
 # Docker
 alias rd = bash ~/repos/arrow/scripts/start-docker.sh
 alias rdb = bash ~/repos/arrow/scripts/start-docker.sh --build
@@ -65,9 +71,6 @@ alias ghd = gh dash
 
 # Just
 alias jed = just --edit
-
-# Eza (ls replacement)
-alias ls = eza
 
 # Zellij
 alias zr = zellij run --
@@ -140,6 +143,19 @@ def aws-mfa [
 # ============================================================
 # INTEGRATIONS
 # ============================================================
+
+# fnm (node version manager) — set env vars, skip PATH (handled separately)
+for line in (fnm env --shell power-shell | lines | where {|l| ($l starts-with '$env:') and (not ($l =~ ':PATH '))}) {
+    let kv = ($line | parse '$env:{k} = "{v}"' | first)
+    load-env {($kv.k): $kv.v}
+}
+$env.PATH = ($env.PATH | prepend ($env.FNM_MULTISHELL_PATH | path join (if $nu.os-info.name == 'windows' {''} else {'bin'})))
+$env.config.hooks.env_change.PWD = (
+    $env.config.hooks.env_change.PWD? | append {
+        condition: {|| ['.nvmrc' '.node-version' 'package.json'] | any {|el| $el | path exists}}
+        code: {|| ^fnm use}
+    }
+)
 
 # Starship prompt
 mkdir ($nu.data-dir | path join "vendor/autoload")
