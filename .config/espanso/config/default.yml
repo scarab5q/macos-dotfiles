@@ -31,7 +31,7 @@
 # --- Auto-restart
 
 # Enable/disable the config auto-reload after a file change is detected.
-auto_restart: false
+auto_restart: true
 
 # Disable the search bar shortcut (Option+Space) so Raycast can use it
 search_shortcut: off
