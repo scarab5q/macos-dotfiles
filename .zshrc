@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+export GPG_TTY=$(tty)
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -81,6 +83,9 @@ fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
+# jj dynamic completions (bookmarks, revisions, files)
+source <(COMPLETE=zsh jj)
+
 # User configuration
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
@@ -125,6 +130,16 @@ alias jed='just --edit'
 alias ls='eza'
 alias zr='zellij run --'
 alias ecl="emacsclient -a '' -c"
+alias j='just'
+alias ded='direnv edit'
+alias npm="sfw npm"
+alias pnpm="sfw pnpm"
+alias bun="sfw bun"
+alias mcd="mkdir -p "$1" && cd "$1";"
+
+alias checkai='$EDITOR /tmp/run.sh'
+alias runai='chmod +x /tmp/run.sh && /tmp/run.sh'
+alias claude='claude --dangerously-load-development-channels server:neovim-yank'
 
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
@@ -137,40 +152,53 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"                                       # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
-cf() { 
-  /usr/bin/git --git-dir=/Users/scarab5q/.cfg/ --work-tree=/Users/scarab5q ls-tree --full-tree -r --full-name HEAD --format $HOME'/%(path)' | fzf -m --preview='bat --color=always {}' --bind 'enter:become(nvim {+})'; 
+cf() {
+  /usr/bin/git --git-dir=/Users/scarab5q/.cfg/ --work-tree=/Users/scarab5q ls-tree --full-tree -r --full-name HEAD --format $HOME'/%(path)' | fzf -m --preview='bat --color=always {}' --bind 'enter:become(nvim {+})'
 }
-if [[ $TERM_PROGRAM == iTerm.app ]] 
-then
+if [[ $TERM_PROGRAM == iTerm.app ]]; then
   eval "$(zellij setup --generate-auto-start zsh)"
 fi
 
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd <"$tmp"
+  [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
+}
+function fe() {
+  local query="${*:-}"
+  fzf --ansi --disabled \
+    --query "$query" \
+    --bind "start:reload(rg --line-number --no-heading --smart-case --color=always -- {q} || true)" \
+    --bind "change:reload(rg --line-number --no-heading --smart-case --color=always -- {q} || true)" \
+    --delimiter : \
+    --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+    --preview-window '~4,+{2}+4/3' \
+    --bind "ctrl-y:execute-silent(echo -n {1} | pbcopy)+bell" \
+    --bind "ctrl-o:execute-silent(echo -n {1} | sed 's|.*/src/||;s|\.[^.]*$||;s|/|.|g' | pbcopy)+bell" \
+    --bind "enter:become($EDITOR {1} +{2})" \
+    </dev/null
 }
 
 source /Users/scarab5q/.config/broot/launcher/bash/br
 
 function zoxide_fzf() {
-    local orig_buffer=$LBUFFER
-    local selection
-    selection=$(zoxide query --list | fzf --height 40% --reverse --border) || {
-        LBUFFER=$orig_buffer
-        zle redisplay
-        return 0
-    }
+  local orig_buffer=$LBUFFER
+  local selection
+  selection=$(zoxide query --list | fzf --height 40% --reverse --border) || {
+    LBUFFER=$orig_buffer
+    zle redisplay
+    return 0
+  }
 
-    if [[ -n "$selection" ]]; then
-        LBUFFER+="$selection"
-        zle redisplay
-    fi
+  if [[ -n "$selection" ]]; then
+    LBUFFER+="$selection"
+    zle redisplay
+  fi
 }
 
 function aws-mfa() {
@@ -182,24 +210,48 @@ function aws-mfa() {
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -b) base_profile="$2"; shift 2 ;;
-      -r) region="$2"; shift 2 ;;
-      -d) duration="$2"; shift 2 ;;
-      -s) serial="$2"; shift 2 ;;
-      -h|--help)
-        echo "usage: aws-mfa [-b baseProfile] [-r region] [-d durationSeconds] [-s mfaSerialArn]" >&2
-        return 0
-        ;;
-      *) echo "Unknown arg: $1" >&2; return 2 ;;
+    -b)
+      base_profile="$2"
+      shift 2
+      ;;
+    -r)
+      region="$2"
+      shift 2
+      ;;
+    -d)
+      duration="$2"
+      shift 2
+      ;;
+    -s)
+      serial="$2"
+      shift 2
+      ;;
+    -h | --help)
+      echo "usage: aws-mfa [-b baseProfile] [-r region] [-d durationSeconds] [-s mfaSerialArn]" >&2
+      return 0
+      ;;
+    *)
+      echo "Unknown arg: $1" >&2
+      return 2
+      ;;
     esac
   done
 
-  command -v aws >/dev/null || { echo "aws not found" >&2; return 1; }
-  command -v python3 >/dev/null || { echo "python3 not found" >&2; return 1; }
+  command -v aws >/dev/null || {
+    echo "aws not found" >&2
+    return 1
+  }
+  command -v python3 >/dev/null || {
+    echo "python3 not found" >&2
+    return 1
+  }
 
   if [[ -z "$serial" ]]; then
     serial="$(aws iam list-mfa-devices --profile "$base_profile" --query 'MFADevices[0].SerialNumber' --output text 2>/dev/null)"
-    [[ -n "$serial" && "$serial" != "None" ]] || { echo "No MFA device found; pass -s <mfa-serial-arn>" >&2; return 1; }
+    [[ -n "$serial" && "$serial" != "None" ]] || {
+      echo "No MFA device found; pass -s <mfa-serial-arn>" >&2
+      return 1
+    }
   fi
 
   # zsh read prompt differs from bash
@@ -214,9 +266,9 @@ function aws-mfa() {
     --serial-number "$serial" \
     --token-code "$code" \
     --duration-seconds "$duration" 2>/dev/null)" || {
-      echo "Failed to get session token (bad MFA code? missing permission? wrong profile?)" >&2
-      return 1
-    }
+    echo "Failed to get session token (bad MFA code? missing permission? wrong profile?)" >&2
+    return 1
+  }
 
   ak="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["Credentials"]["AccessKeyId"])' <<<"$out")"
   sk="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["Credentials"]["SecretAccessKey"])' <<<"$out")"
@@ -230,11 +282,99 @@ function aws-mfa() {
   export AWS_DEFAULT_REGION="$region"
   export AWS_MFA_SESSION_EXPIRATION="$exp"
 
+  # Write to [mfa] profile so other processes (e.g. MCP servers) can use AWS_PROFILE=mfa
+  aws configure set aws_access_key_id "$ak" --profile mfa
+  aws configure set aws_secret_access_key "$sk" --profile mfa
+  aws configure set aws_session_token "$tok" --profile mfa
+  aws configure set region "$region" --profile mfa
+
   echo "AWS MFA session active (expires: $exp)"
 }
 
+function aws-1pass() {
+  local base_profile="default"
+  local region="eu-west-2"
+  local duration="43200"
+  local serial="arn:aws:iam::144392380677:mfa/1password"
+  local code out ak sk tok exp
 
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+    -b)
+      base_profile="$2"
+      shift 2
+      ;;
+    -r)
+      region="$2"
+      shift 2
+      ;;
+    -d)
+      duration="$2"
+      shift 2
+      ;;
+    -s)
+      serial="$2"
+      shift 2
+      ;;
+    -h | --help)
+      echo "usage: aws-1pass [-b baseProfile] [-r region] [-d durationSeconds] [-s mfaSerialArn]" >&2
+      return 0
+      ;;
+    *)
+      echo "Unknown arg: $1" >&2
+      return 2
+      ;;
+    esac
+  done
 
+  command -v aws >/dev/null || {
+    echo "aws not found" >&2
+    return 1
+  }
+  command -v op >/dev/null || {
+    echo "op (1Password CLI) not found" >&2
+    return 1
+  }
+  command -v python3 >/dev/null || {
+    echo "python3 not found" >&2
+    return 1
+  }
+
+  code="$(op item get 'AWS' --otp)" || {
+    echo "Failed to get TOTP from 1Password (item: 'AWS')" >&2
+    return 1
+  }
+
+  out="$(aws sts get-session-token \
+    --profile "$base_profile" \
+    --serial-number "$serial" \
+    --token-code "$code" \
+    --duration-seconds "$duration" 2>/dev/null)" || {
+    echo "Failed to get session token (bad MFA code? missing permission? wrong profile?)" >&2
+    return 1
+  }
+
+  ak="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["Credentials"]["AccessKeyId"])' <<<"$out")"
+  sk="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["Credentials"]["SecretAccessKey"])' <<<"$out")"
+  tok="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["Credentials"]["SessionToken"])' <<<"$out")"
+  exp="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["Credentials"]["Expiration"])' <<<"$out")"
+
+  export AWS_ACCESS_KEY_ID="$ak"
+  export AWS_SECRET_ACCESS_KEY="$sk"
+  export AWS_SESSION_TOKEN="$tok"
+  export AWS_REGION="$region"
+  export AWS_DEFAULT_REGION="$region"
+  export AWS_MFA_SESSION_EXPIRATION="$exp"
+
+  aws configure set aws_access_key_id "$ak" --profile mfa
+  aws configure set aws_secret_access_key "$sk" --profile mfa
+  aws configure set aws_session_token "$tok" --profile mfa
+  aws configure set region "$region" --profile mfa
+
+  echo "AWS MFA session active (expires: $exp)"
+}
+
+export SSH_AUTH_SOCK=/Users/scarab5q/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 
 # Added by GitButler installer
 export PATH="/Users/scarab5q/.local/bin:$PATH"
@@ -247,7 +387,7 @@ eval "$(atuin init zsh)"
 # pnpm
 export PNPM_HOME="/Users/scarab5q/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
