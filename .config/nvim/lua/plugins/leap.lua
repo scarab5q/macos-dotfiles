@@ -1,11 +1,20 @@
 return {
   {
     "ggandor/leap.nvim",
-    keys = {
-      { "gs", mode = { "n", "x", "o" }, desc = "Leap bidirectional" },
-    },
+    lazy = false,
     config = function()
       vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap)")
     end,
+  },
+
+  -- which-key overrides
+  {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        { "gs", desc = "Leap bidirectional", mode = { "n", "x", "o" } },
+        { "<leader>fe", group = "config" },
+      },
+    },
   },
 }

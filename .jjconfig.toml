@@ -1,0 +1,11 @@
+[signing]
+backend = "ssh"
+key = "/Users/scarab5q/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/PublicKeys/22f2d30616bcdd37de806904477e3bc5.pub"
+behavior = "own"
+
+[signing.backends.ssh]
+allowed-signers = "/Users/scarab5q/.gitallowedsigners"
+
+[user]
+name = "Jack Denny"
+email = "24301052+scarab5q@users.noreply.github.com"
