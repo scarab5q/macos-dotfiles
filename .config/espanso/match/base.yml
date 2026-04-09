@@ -1,0 +1,221 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
+
+  # But matches can also be dynamic:
+
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+
+  # And much more! For more information, visit the docs: https://espanso.org/docs/
+  #
+  # espanso match file
+  # For a complete introduction, visit the official docs at: https://espanso.org/docs/
+  # You can use this file to define the base matches (aka snippets)
+  # that will be available in every application when using espanso.
+  # Matches are substitution rules: when you type the "trigger" string
+  # it gets replaced by the "replace" string.
+  # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+  #Chris' config
+  - trigger: ":eu"
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "External User by User ID"
+              id: 'SELECT * FROM "ExternalUser" eu WHERE eu.user_id = ''{{clipb}}'' ORDER BY "createdAt" desc;'
+            - label: "External User by External User ID"
+              id: 'SELECT * FROM "ExternalUser" eu WHERE eu.external_user_id = ''{{clipb}}'' ORDER BY "createdAt" desc;'
+  - trigger: ":ba"
+    replace: 'SELECT * FROM "BankingAccount" ba WHERE ba.user_id = ''{{clipb}}'' ORDER BY "created_at" desc;'
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+  - trigger: ":tx"
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "Transaction ID"
+              id: 'SELECT * FROM "Transaction" t WHERE t.id = ''{{clipb}}'' ORDER BY "time" DESC;'
+            - label: "Transaction Audit ID"
+              id: 'SELECT * FROM "TransactionAudit" ta WHERE ta."transaction_id" = ''{{clipb}}'' ORDER BY ta."created_at" DESC;'
+            - label: "Transaction by User ID"
+              id: 'SELECT * FROM "Transaction" t JOIN "BankingAccount" ba on ba.id = t.banking_account_id WHERE ba.user_id = ''{{clipb}}'' ORDER BY "time" DESC;'
+            - label: "Transaction by External Supplied ID"
+              id: 'SELECT * FROM "Transaction" t WHERE t."external_supplied_id" = ''{{clipb}}'' ORDER BY "time" DESC;'
+            - label: "Transaction by many External Supplied ID"
+              id: 'SELECT * FROM "Transaction" t WHERE t."external_supplied_id" in ({{clipb}}) ORDER BY "time" DESC;'
+            - label: "Transaction by Banking Account ID"
+              id: 'SELECT * FROM "Transaction" t WHERE t."banking_account_id" = ''{{clipb}}'' ORDER BY "time" DESC;'
+  - trigger: ":contact"
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "Contact by ID"
+              id: 'SELECT * FROM "Contact" c WHERE c."id" = ''{{clipb}}'' ORDER BY "created_at" desc;'
+            - label: "Contact by User ID"
+              id: 'SELECT * FROM "Contact" WHERE "user_id" = ''{{clipb}}'' ORDER BY "created_at" desc;'
+  - trigger: ":address"
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "Address by User ID"
+              id: 'SELECT a.* FROM "Address" a JOIN "User" u ON u.id = a.user_id WHERE a.user_id = ''{{clipb}}'';'
+            - label: "Address by Email"
+              id: 'SELECT a.* FROM "Address" a JOIN "User" u ON u.id = a.user_id WHERE u.email ILIKE ''%{{clipb}}%'';'
+  - trigger: ":user"
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "User by ID"
+              id: 'SELECT * FROM "User" u WHERE u.id = ''{{clipb}}'';'
+            - label: "User by Email"
+              id: 'SELECT * FROM "User" u WHERE u.email ILIKE ''{{clipb}}'';'
+  - trigger: ":biz"
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "Business by Name"
+              id: 'SELECT * FROM "Business" b WHERE b.name ILIKE ''%{{clipb}}%'';'
+            - label: "BusinessUser with Business by Business Name"
+              id: 'SELECT * FROM "BusinessUser" bu JOIN "Business" b ON bu.business_id = b.id WHERE b.name ILIKE ''%{{clipb}}%'';'
+            - label: "BusinessUser with Business by Email"
+              id: 'SELECT * FROM "BusinessUser" bu JOIN "Business" b ON bu.business_id = b.id WHERE bu.email ILIKE ''%{{clipb}}%'';'
+  - trigger: ":due"
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "DUE - BankingAccount by User ID"
+              id: 'SELECT provider, account_status, * FROM "BankingAccount" WHERE user_id = ''{{clipb}}'' AND provider = ''DUE'';'
+            - label: "DUE - ExternalUser by User ID"
+              id: 'SELECT provider, status, * FROM "ExternalUser" WHERE user_id = ''{{clipb}}'' AND provider = ''DUE'';'
+            - label: "DUE - CryptoWallet by User ID"
+              id: 'SELECT provider, status, * FROM "CryptoWallet" WHERE user_id = ''{{clipb}}'' AND provider = ''DUE'';'
+  - trigger: ":kulipa"
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "KULIPA - BankingAccount by User ID"
+              id: 'SELECT provider, account_status, * FROM "BankingAccount" WHERE user_id = ''{{clipb}}'' AND provider = ''KULIPA'';'
+            - label: "KULIPA - ExternalUser by User ID"
+              id: 'SELECT provider, status, * FROM "ExternalUser" WHERE user_id = ''{{clipb}}'' AND provider = ''KULIPA'';'
+            - label: "KULIPA - CryptoWallet by User ID"
+              id: 'SELECT provider, status, * FROM "CryptoWallet" WHERE user_id = ''{{clipb}}'' AND provider = ''KULIPA'';'
+  - trigger: ":keel"
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "KEEL - BankingAccount by User ID"
+              id: 'SELECT provider, account_status, * FROM "BankingAccount" WHERE user_id = ''{{clipb}}'' AND provider = ''KEEL'';'
+            - label: "KEEL - ExternalUser by User ID"
+              id: 'SELECT provider, status, * FROM "ExternalUser" WHERE user_id = ''{{clipb}}'' AND provider = ''KEEL'';'
+            - label: "KEEL - CryptoWallet by User ID"
+              id: 'SELECT provider, status, * FROM "CryptoWallet" WHERE user_id = ''{{clipb}}'' AND provider = ''KEEL'';'
+  - trigger: ":privy"
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "PRIVY - BankingAccount by User ID"
+              id: 'SELECT provider, account_status, * FROM "BankingAccount" WHERE user_id = ''{{clipb}}'' AND provider = ''PRIVY'';'
+            - label: "PRIVY - ExternalUser by User ID"
+              id: 'SELECT provider, status, * FROM "ExternalUser" WHERE user_id = ''{{clipb}}'' AND provider = ''PRIVY'';'
+            - label: "PRIVY - CryptoWallet by User ID"
+              id: 'SELECT provider, status, * FROM "CryptoWallet" WHERE user_id = ''{{clipb}}'' AND provider = ''PRIVY'';'
+  - trigger: ":ff"
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "FeatureFlag by Name"
+              id: 'Select * from "FeatureFlag" where name = ''{{clipb}}'';'
+            - label: "UserFeatureFlag by User ID"
+              id: 'select * from "UserFeatureFlag" where user_id = ''{{clipb}}'';'
+            - label: "UserFeatureFlag join FeatureFlag by Name"
+              id: 'select * from "UserFeatureFlag" uff join "FeatureFlag" ff on ff.id = uff.feature_flag_id where ff.name = ''{{clipb}}'';'
+            - label: "UserFeatureFlag join FeatureFlag by User ID"
+              id: 'select * from "UserFeatureFlag" uff join "FeatureFlag" ff on ff.id = uff.feature_flag_id where uff.user_id = ''{{clipb}}'';'
+
