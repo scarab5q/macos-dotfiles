@@ -9,3 +9,7 @@ allowed-signers = "/Users/scarab5q/.gitallowedsigners"
 [user]
 name = "Jack Denny"
 email = "24301052+scarab5q@users.noreply.github.com"
+
+[aliases]
+refresh-dev = ["util", "exec" ]
+switch-mocks = ["util", "exec", "--", "zsh", "-c"]

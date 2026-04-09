@@ -1,6 +1,7 @@
 [user]
 	name = Jack Denny
-	email = jackmdenny@gmail.com
+	email = 24301052+scarab5q@users.noreply.github.com
+
 [alias]
   submodule-init-all = submodule update --init --recursive
   unstage = restore --staged
@@ -12,8 +13,18 @@
   rco = rebase --continue
   untemp = "!f() { if [ \"$(git log -1 --format=%s)\" = \"temp\" ]; then git reset --soft HEAD~1; else echo 'Last commit was not a temp commit'; fi; }; f"
   uncommit = "!f() { git reset --soft \"${1:-HEAD~1}\"; }; f"
+  resign = "!re() { git rebase --exec 'git commit --amend --no-edit -n -S' -i $1; }; re"
 
 [push]
 	autoSetupRemote = true
 [pull]
 	rebase = true
+
+[user]
+	signingkey = /Users/scarab5q/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/PublicKeys/22f2d30616bcdd37de806904477e3bc5.pub
+[commit]
+    gpgsign = true
+[gpg]
+    format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /Users/scarab5q/.gitallowedsigners
