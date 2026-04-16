@@ -100,6 +100,8 @@ matches:
               id: 'SELECT * FROM "Contact" c WHERE c."id" = ''{{clipb}}'' ORDER BY "created_at" desc;'
             - label: "Contact by User ID"
               id: 'SELECT * FROM "Contact" WHERE "user_id" = ''{{clipb}}'' ORDER BY "created_at" desc;'
+            - label: "Contact by Transaction ID"
+              id: 'SELECT c.* FROM "Contact" c JOIN "Transaction" t ON t.contact_id = c.id::text WHERE t.id = ''{{clipb}}'';'
   - trigger: ":address"
     replace: "{{output}}"
     vars:
@@ -219,3 +221,14 @@ matches:
             - label: "UserFeatureFlag join FeatureFlag by User ID"
               id: 'select * from "UserFeatureFlag" uff join "FeatureFlag" ff on ff.id = uff.feature_flag_id where uff.user_id = ''{{clipb}}'';'
 
+  - triggers: [":shift"]
+    replace: "{{output}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+      - name: "output"
+        type: "choice"
+        params:
+          values:
+            - label: "Transaction id"
+              id: 'SELECT * FROM \"Transaction\" where metadata ->> provider = \"SHIFT\" and id=''{{clipb}}'''
