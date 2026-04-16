@@ -2,7 +2,7 @@ return {
 
   -- Disable LazyVim's built-in mini.surround to avoid conflicts
   {
-    "nvim-mini/mini.surround",
+    "echasnovski/mini.surround",
     enabled = false,
   },
 
