@@ -132,10 +132,16 @@ alias zr='zellij run --'
 alias ecl="emacsclient -a '' -c"
 alias j='just'
 alias ded='direnv edit'
-alias npm="sfw npm"
+# alias npm="sfw npm"
 alias pnpm="sfw pnpm"
 alias bun="sfw bun"
 alias mcd="mkdir -p "$1" && cd "$1";"
+alias simcopy='pbpaste | xcrun simctl pbcopy booted'
+
+function ebancopy() {
+  egiban
+  simcopy
+}
 
 alias checkai='$EDITOR /tmp/run.sh'
 alias runai='chmod +x /tmp/run.sh && /tmp/run.sh'

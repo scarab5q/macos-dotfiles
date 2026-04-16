@@ -14,6 +14,7 @@ export BACKEND=$ARROW/apps/backend
 export ARQ=$REPOS/arq
 export PUSH_FORMAT_CHECK=0
 export RIPGREP_CONFIG_PATH=/Users/scarab5q/.ripgreprc
+export OPENAI_API_KEY=$(op item get 5vjtbazh33oddjbodlkjbhifvi --fields password --reveal)
 
 
 
