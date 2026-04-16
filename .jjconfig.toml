@@ -11,5 +11,6 @@ name = "Jack Denny"
 email = "24301052+scarab5q@users.noreply.github.com"
 
 [aliases]
-refresh-dev = ["util", "exec" ]
-switch-mocks = ["util", "exec", "--", "zsh", "-c"]
+refresh-dev = ["util", "exec", "--", "zsh", "-c", "jj git fetch && jj bookmark set local-dev -r dev@origin"]
+check-dev = ["util", "exec", "--", "zsh", "-c", "jj log -r 'local-dev' --no-graph && echo '---' && jj log -r 'dev@origin' --no-graph"]
+fetch = ["git", "fetch"]
