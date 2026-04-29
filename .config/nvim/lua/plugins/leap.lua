@@ -1,6 +1,6 @@
 return {
   {
-    "ggandor/leap.nvim",
+    url = "https://codeberg.org/andyg/leap.nvim.git",
     lazy = false,
     config = function()
       vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap)")

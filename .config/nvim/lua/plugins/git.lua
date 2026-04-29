@@ -12,6 +12,9 @@ return {
       diff = {
         module = "diffview",
       },
+      terminal = {
+        window = { type = "hsplit" },
+      },
     },
   },
   {

@@ -14,11 +14,9 @@ export BACKEND=$ARROW/apps/backend
 export ARQ=$REPOS/arq
 export PUSH_FORMAT_CHECK=0
 export RIPGREP_CONFIG_PATH=/Users/scarab5q/.ripgreprc
-export OPENAI_API_KEY=$(op item get 5vjtbazh33oddjbodlkjbhifvi --fields password --reveal)
-
-
-
-
+# 1Password secrets are cached in ~/.secrets
+# Run `refresh-secrets` to re-fetch from 1Password (requires Touch ID once)
+# export OPENAI_API_KEY=$(op item get 5vjtbazh33oddjbodlkjbhifvi --fields password --reveal)
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.

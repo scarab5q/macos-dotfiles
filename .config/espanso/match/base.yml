@@ -81,6 +81,8 @@ matches:
               id: 'SELECT * FROM "TransactionAudit" ta WHERE ta."transaction_id" = ''{{clipb}}'' ORDER BY ta."created_at" DESC;'
             - label: "Transaction by User ID"
               id: 'SELECT * FROM "Transaction" t JOIN "BankingAccount" ba on ba.id = t.banking_account_id WHERE ba.user_id = ''{{clipb}}'' ORDER BY "time" DESC;'
+            - label: "Transaction by User Email"
+              id: 'SELECT t.* FROM "Transaction" t JOIN "BankingAccount" ba ON ba.id = t.banking_account_id JOIN "User" u ON u.id = ba.user_id WHERE u.email ILIKE ''%{{clipb}}%'' ORDER BY t."time" DESC;'
             - label: "Transaction by External Supplied ID"
               id: 'SELECT * FROM "Transaction" t WHERE t."external_supplied_id" = ''{{clipb}}'' ORDER BY "time" DESC;'
             - label: "Transaction by many External Supplied ID"
@@ -224,11 +226,16 @@ matches:
   - triggers: [":shift"]
     replace: "{{output}}"
     vars:
-      - name: "clipb"
+      - name: "clipb"   
         type: "clipboard"
       - name: "output"
         type: "choice"
         params:
           values:
             - label: "Transaction id"
-              id: 'SELECT * FROM \"Transaction\" where metadata ->> provider = \"SHIFT\" and id=''{{clipb}}'''
+              id: 'SELECT metadata->>''providerSpecificTransactionStatus''as failureReason,* FROM "Transaction" where metadata ->> ''provider'' = ''SHIFT'' and id=''{{clipb}}'''
+            - label: "Successful + Prosessing since date"
+              id: 'SELECT * FROM "Transaction" where metadata ->> ''provider'' = ''SHIFT'' and status IN (''SUCCESSFUL'', ''PROCESSING'') and "createdAt" >= ''{{clipb}}'' ORDER BY "createdAt" DESC;'
+            - label: "Failed + Declined since date"
+              id: 'SELECT metadata->>''providerSpecificTransactionStatus''as failureReason, * FROM "Transaction" where metadata ->> ''provider'' = ''SHIFT'' and state IN (''FAILED'', ''DECLINED'') and time >= ''{{clipb}}'' ORDER BY "createdAt" DESC;'
+
