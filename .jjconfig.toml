@@ -19,7 +19,6 @@ email = "24301052+scarab5q@users.noreply.github.com"
 refresh-dev = ["util", "exec", "--", "zsh", "-c", "jj git fetch && jj bookmark set local-dev -r dev@origin"]
 check-dev = ["util", "exec", "--", "zsh", "-c", "jj log -r 'local-dev' --no-graph && echo '---' && jj log -r 'dev@origin' --no-graph"]
 fetch = ["git", "fetch"]
-tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@"]
 # Local bookmark tips that aren't also on any remote — either never pushed or amended after push.
 unsynced = ["log", "-r", "bookmarks() ~ remote_bookmarks()", "--no-graph", "-T", 'bookmarks ++ "\n"']
 stack = ["rebase", "--after", "trunk()", "--before", "closest_merge(@)", "--revisions"]
