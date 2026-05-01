@@ -12,7 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -88,17 +88,6 @@ source $ZSH/oh-my-zsh.sh
 # jj dynamic completions (bookmarks, revisions, files)
 source <(COMPLETE=zsh jj)
 
-# jj-aware prompt: show jj bookmark or short change id when inside a jj repo,
-# falling back to the normal git prompt otherwise.
-_in_jj_repo() {
-  local dir=$PWD
-  while [[ -n $dir && $dir != / ]]; do
-    [[ -d "$dir/.jj" ]] && return 0
-    dir=${dir:h}
-  done
-  return 1
-}
-
 # Record mtimes of shell config at source time; prompt flags staleness if either changes.
 typeset -g ZSHRC_MTIME=$(stat -f %m ~/.zshrc 2>/dev/null)
 typeset -g ZPROFILE_MTIME=$(stat -f %m ~/.zprofile 2>/dev/null)
@@ -114,20 +103,8 @@ _zshrc_stale_info() {
   print -n "%{$fg_bold[yellow]%}⟳${(j:,:)stale}%{$reset_color%} "
 }
 
-functions -c git_prompt_info _omz_git_prompt_info
-
-git_prompt_info() {
-  if _in_jj_repo; then
-    local info
-    info=$(jj log -r @ --no-graph --ignore-working-copy \
-      --template 'if(local_bookmarks, local_bookmarks.map(|b| b.name()).join(",") ++ if(local_bookmarks.any(|b| b.conflict()), " ⚠"), change_id.shortest(8))' 2>/dev/null)
-    [[ -z $info ]] && return
-    print -n "%{$fg_bold[blue]%}jj:(%{$fg[red]%}${info}%{$fg_bold[blue]%})%{$reset_color%} "
-  else
-    _omz_git_prompt_info
-  fi
-}
-
+# starship prompt — shows git AND jj info side-by-side (see ~/.config/starship.toml)
+eval "$(starship init zsh)"
 PROMPT='$(_zshrc_stale_info)'"$PROMPT"
 
 # User configuration
