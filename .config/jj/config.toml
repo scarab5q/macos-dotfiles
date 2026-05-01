@@ -1,0 +1,29 @@
+[aliases]
+# Diff the local bookmark at/behind @ against its remote-tracked counterpart.
+# Requires both to share history — run `jj git fetch` first if you suspect divergence.
+diff-remote = ["diff", "--from", "current_bookmark_remote()", "--to", "current_bookmark()"]
+
+[revset-aliases]
+"current_bookmark()" = "heads(bookmarks() & ::@)"
+"current_bookmark_remote()" = "heads(remote_bookmarks() & ::@)"
+
+
+[ui]
+merge-editor = "mergiraf"
+
+[merge-tools.diffconflicts]
+program = "nvim"
+merge-args = [
+    "-c", "let g:jj_diffconflicts_marker_length=$marker_length",
+    "-c", "JJDiffConflicts!", "$output", "$base", "$left", "$right",
+]
+merge-tool-edits-conflict-markers = true
+
+# mergiraf: structural (AST-aware) auto-resolver. Falls back to writing
+# conflict markers for anything it can't auto-resolve, then you can edit
+# the file directly or rerun `jj resolve --tool diffconflicts` for a 2-way view.
+[merge-tools.mergiraf]
+program = "mergiraf"
+merge-args = ["merge", "--compact", "-s", "$left", "-x", "$right", "-b", "$base", "-o", "$output", "$base", "$left", "$right"]
+merge-tool-edits-conflict-markers = true
+merge-conflict-exit-codes = [1]
