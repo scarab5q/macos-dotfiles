@@ -10,6 +10,10 @@ diff-remote = ["diff", "--from", "current_bookmark_remote()", "--to", "current_b
 
 [ui]
 merge-editor = "mergiraf"
+# Pipe diffs/logs through delta. `:git` makes jj emit git-style unified diffs
+# so delta can syntax-highlight them.
+pager = ["delta", "--paging=auto"]
+diff-formatter = ":git"
 
 [merge-tools.diffconflicts]
 program = "nvim"
@@ -24,6 +28,6 @@ merge-tool-edits-conflict-markers = true
 # the file directly or rerun `jj resolve --tool diffconflicts` for a 2-way view.
 [merge-tools.mergiraf]
 program = "mergiraf"
-merge-args = ["merge", "--compact", "-s", "$left", "-x", "$right", "-b", "$base", "-o", "$output", "$base", "$left", "$right"]
+merge-args = ["merge", "--compact", "-o", "$output", "$base", "$left", "$right"]
 merge-tool-edits-conflict-markers = true
 merge-conflict-exit-codes = [1]

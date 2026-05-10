@@ -1,0 +1,21 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "test-data-generator",
+  "title": "Test Data Generator",
+  "description": "Generate fake IBANs, phone numbers, and addresses for specific countries",
+  "icon": "icon.svg",
+  "author": "scarab5q",
+  "license": "MIT",
+  "platforms": ["macOS"],
+  "commands": [
+    {
+      "name": "generate-test-data",
+      "title": "Generate Test Data",
+      "description": "Generate fake IBANs, phone numbers, and addresses with dropdowns",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.1"
+  }
+}

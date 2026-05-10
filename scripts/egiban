@@ -1,0 +1,12 @@
+#!/bin/bash
+python3 -c "
+import random
+bank = f'{random.randint(1,99):04d}'
+acct = ''.join([str(random.randint(0,9)) for _ in range(21)])
+bban = bank + acct
+numeric = bban + '141600'
+check = 98 - (int(numeric) % 97)
+iban = f'EG{check:02d}{bban}'
+print(iban)
+" | tr -d '\n' | pbcopy
+echo "Copied to clipboard: $(pbpaste)"

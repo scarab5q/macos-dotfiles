@@ -224,6 +224,35 @@ cf() {
   /usr/bin/git --git-dir=/Users/scarab5q/.cfg/ --work-tree=/Users/scarab5q ls-tree --full-tree -r --full-name HEAD --format $HOME'/%(path)' | fzf -m --preview='bat --color=always {}' --bind 'enter:become(nvim {+})'
 }
 
+# fzf shell integration: Ctrl+T (files), Ctrl+R (history), Alt+C (cd)
+source <(fzf --zsh)
+
+# frf — fzf-find a file in the current repo and open it in nvim.
+# Works in either jj or git repos; falls back to cwd if neither.
+# (Named to avoid clashing with omz git plugin's `gf` = `git fetch` alias.)
+frf() {
+  local root
+  root=$(jj root 2>/dev/null) \
+    || root=$(/usr/bin/git rev-parse --show-toplevel 2>/dev/null) \
+    || root=$PWD
+  # Union: gitignore-respecting file list + force-included scratch* files.
+  # node_modules / dist excluded explicitly as a belt-and-braces guard
+  # (rg already skips them via .gitignore in normal repos).
+  local excludes=(
+    --glob '!.git' --glob '!.jj'
+    --glob '!node_modules' --glob '!dist'
+    --glob '!.next' --glob '!build' --glob '!target'
+    --glob '!coverage' --glob '!.turbo' --glob '!.cache'
+  )
+  (cd "$root" && {
+      rg --files --hidden "${excludes[@]}"
+      rg --files --hidden --no-ignore --glob 'scratch*' --iglob '**/scratch*' "${excludes[@]}"
+    } | sort -u \
+    | fzf -m \
+        --preview='bat --color=always --style=numbers "'"$root"'/{}"' \
+        --bind 'enter:become(nvim '"$root"'/{+})')
+}
+
 if [[ $TERM_PROGRAM == iTerm.app ]]; then
   eval "$(zellij setup --generate-auto-start zsh)"
 fi
