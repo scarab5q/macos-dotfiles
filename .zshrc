@@ -472,9 +472,6 @@ function aws-1pass() {
 
 export SSH_AUTH_SOCK=/Users/scarab5q/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 
-# Added by GitButler installer
-export PATH="/Users/scarab5q/.local/bin:$PATH"
-eval "$(but completions zsh)"
 
 . "$HOME/.atuin/bin/env"
 
@@ -487,3 +484,14 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Wrapper so `jj autoclear` dispatches to ~/scripts/jj-autoclear.
+# jj 0.41 has no external-subcommand support, so we intercept here.
+jj() {
+  if [ "${1:-}" = "autoclear" ]; then
+    shift
+    command ~/scripts/jj-autoclear "$@"
+  else
+    command jj "$@"
+  fi
+}
