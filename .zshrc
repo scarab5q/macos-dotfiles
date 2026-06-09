@@ -118,6 +118,11 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 export EDITOR='nvim'
 
+# Cached 1Password secrets — interactive-shell only. Background non-interactive
+# shells (scripts, hooks, `bash -c`) don't need these. The file is the plain
+# `export` output of ~/scripts/refresh-secrets; re-run that script to refresh.
+[ -f ~/.secrets ] && source ~/.secrets
+
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 

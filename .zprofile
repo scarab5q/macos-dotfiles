@@ -3,8 +3,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export EDITOR="nvim"
-# Source secrets from gitignored file
-[ -f ~/.secrets ] && source ~/.secrets
+# Secrets are sourced from ~/.zshrc so they only land in interactive shells,
+# not background non-interactive ones. The file is the cached output of
+# ~/scripts/refresh-secrets (a plain `export` file — no `op` calls at startup).
 export PATH="$HOME/scripts:$PATH"
 export PATH="/Users/scarab5q/.local/bin:$PATH"
 export HISTORY_IGNORE="(doppler secrets set*)"
