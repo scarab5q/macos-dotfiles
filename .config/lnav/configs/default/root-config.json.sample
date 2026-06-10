@@ -1,5 +1,12 @@
 {
     "$schema": "https://lnav.org/schemas/config-v1.schema.json",
+    "apps": {
+        "lnav": {
+            "api-test": {
+                "description": "Examples of using lnav's external APIs"
+            }
+        }
+    },
     "ui": {
         "clock-format": "%Y-%m-%dT%H:%M:%S %Z",
         "dim-text": false,
@@ -7,7 +14,7 @@
         "keymap": "default",
         "theme": "default",
         "mouse": {
-            "mode": "disabled"
+            "mode": "enabled"
         },
         "movement": {
             "mode": "cursor"
@@ -140,13 +147,32 @@
         },
         "external-editor": {
             "impls": {
+                "IntelliJ": {
+                    "config-dir": ".idea",
+                    "prefers": "^.*(?:\\.java|\\.kt|\\.py)$",
+                    "test": "command -v idea",
+                    "command": "idea --line ${LINE} --column ${COL} \"$FILE_PATH\""
+                },
+                "CLion": {
+                    "config-dir": ".idea",
+                    "test": "command -v clion",
+                    "command": "clion --line ${LINE} --column ${COL} \"$FILE_PATH\""
+                },
+                "RustRover": {
+                    "config-dir": ".idea",
+                    "prefers": "^.*(?:Cargo.toml|\\.rs)",
+                    "test": "command -v rustrover",
+                    "command": "rustrover --line ${LINE} --column ${COL} \"$FILE_PATH\""
+                },
                 "VSCode": {
+                    "config-dir": ".vscode",
                     "test": "command -v code",
-                    "command": "env VSCODE_PWD=\"$PWD\" code \"$FILE_PATH\""
+                    "command": "env VSCODE_PWD=\"$PWD\" code -g \"$FILE_PATH\":$LINE:$COL"
                 },
                 "VSCode.app": {
+                    "config-dir": ".vscode",
                     "test": "command -v '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'",
-                    "command": "env VSCODE_PWD=\"$PWD\" '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' \"$FILE_PATH\""
+                    "command": "env VSCODE_PWD=\"$PWD\" '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' -g \"$FILE_PATH\":$LINE:$COL"
                 },
                 "zzz.MacOS": {
                     "test": "command -v open",
@@ -155,7 +181,7 @@
             }
         },
         "textfile": {
-            "max-unformatted-line-length": 1024
+            "max-unformatted-line-length": 2048
         },
         "url-scheme": {
             "docker": {
@@ -172,6 +198,9 @@
             },
             "podman": {
                 "handler": "docker-url-handler"
+            },
+            "strace": {
+                "handler": "strace-url-handler"
             }
         }
     }

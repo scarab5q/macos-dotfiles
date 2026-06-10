@@ -90,15 +90,18 @@
                     },
                     "popup": {
                         "color": "#fff",
-                        "background-color": "#011627"
+                        "background-color": "#023c4d"
                     },
                     "popup-border": {
                         "color": "#5f7e97",
-                        "background-color": "#011627"
+                        "background-color": "#023c4d"
                     },
                     "scrollbar": {
                         "color": "$black",
                         "background-color": "$white"
+                    },
+                    "timeline-bar": {
+                        "background-color": "#632053"
                     },
                     "h1": {
                         "color": "$magenta",
@@ -262,6 +265,11 @@
                         "background-color": "#2d5a80",
                         "bold": true
                     },
+                    "alert-title": {
+                        "color": "#ef5350",
+                        "background-color": "#2d5a80",
+                        "bold": true
+                    },
                     "subtitle": {
                         "color": "#f8f8f0",
                         "background-color": "#005f5f"
@@ -283,11 +291,15 @@
                         "background-color": "#162d40"
                     },
                     "active": {
-                        "color": "#264b33",
+                        "color": "#407e56",
                         "background-color": "#162d40"
                     },
                     "inactive": {
                         "color": "#f0f0f0",
+                        "background-color": "#0F1F2B"
+                    },
+                    "inactive-warn": {
+                        "color": "#b39554",
                         "background-color": "#0F1F2B"
                     },
                     "inactive-alert": {

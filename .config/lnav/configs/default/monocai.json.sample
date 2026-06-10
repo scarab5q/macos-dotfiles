@@ -101,6 +101,9 @@
                         "color": "$black",
                         "background-color": "#888"
                     },
+                    "timeline-bar": {
+                        "background-color": "#6a4e9e"
+                    },
                     "h1": {
                         "color": "$magenta",
                         "bold": true
@@ -264,6 +267,11 @@
                         "background-color": "#5394ec",
                         "bold": true
                     },
+                    "alert-title": {
+                        "color": "$red",
+                        "background-color": "#5394ec",
+                        "bold": true
+                    },
                     "subtitle": {
                         "color": "#555",
                         "background-color": "#66d9ee",
@@ -300,6 +308,10 @@
                     },
                     "inactive": {
                         "color": "#555",
+                        "background-color": "#2f2f2f"
+                    },
+                    "inactive-warn": {
+                        "color": "$yellow",
                         "background-color": "#2f2f2f"
                     },
                     "inactive-alert": {

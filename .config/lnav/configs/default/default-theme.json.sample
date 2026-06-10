@@ -46,15 +46,37 @@
                     "log-level-fatal": {
                         "value": "\uD83C\uDD35"
                     },
+                    "breakpoint": {
+                        "value": "\u25CF"
+                    },
+                    "disabled-breakpoint": {
+                        "value": "\u25CB"
+                    },
                     "play": {
                         "value": "\u25b6"
                     },
                     "edit": {
                         "value": "\u270F\uFE0F"
+                    },
+                    "file": {
+                        "value": "\ud83d\udcc4"
+                    },
+                    "thread": {
+                        "value": "\ud83e\uddf5"
+                    },
+                    "tag": {
+                        "value": "\ud83c\udff7\ufe0f"
+                    },
+                    "partition": {
+                        "value": "\u2291"
+                    },
+                    "busy": {
+                        "value": "\u23f3"
                     }
                 },
                 "vars": {
-                    "semantic_highlight_color": "semantic()"
+                    "semantic_highlight_color": "semantic()",
+                    "yellow": "Olive"
                 },
                 "styles": {
                     "text": {
@@ -127,6 +149,9 @@
                     "scrollbar": {
                         "color": "Black",
                         "background-color": "Silver"
+                    },
+                    "timeline-bar": {
+                        "background-color": "Teal"
                     },
                     "focused": {
                         "color": "Black",
@@ -243,17 +268,17 @@
                     },
                     "spectrogram-low": {
                         "color": "Black",
-                        "background-color": "Green",
+                        "background-color": "#0f0",
                         "bold": true
                     },
                     "spectrogram-medium": {
                         "color": "Black",
-                        "background-color": "Olive",
+                        "background-color": "#ffff5f",
                         "bold": true
                     },
                     "spectrogram-high": {
                         "color": "Black",
-                        "background-color": "Maroon",
+                        "background-color": "#d70000",
                         "bold": true
                     },
                     "file": {
@@ -284,6 +309,11 @@
                 "status-styles": {
                     "title": {
                         "color": "Silver",
+                        "background-color": "Navy",
+                        "bold": true
+                    },
+                    "alert-title": {
+                        "color": "Maroon",
                         "background-color": "Navy",
                         "bold": true
                     },
@@ -318,6 +348,10 @@
                     },
                     "inactive": {
                         "color": "Silver",
+                        "background-color": "Grey53"
+                    },
+                    "inactive-warn": {
+                        "color": "Olive",
                         "background-color": "Grey53"
                     },
                     "inactive-alert": {

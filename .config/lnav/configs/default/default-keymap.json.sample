@@ -14,13 +14,27 @@
         "keymap_def_prev_section": "Press ${ansi_bold}{${ansi_norm} to move to the previous section in the view",
         "keymap_def_next_section": "Press ${ansi_bold}}${ansi_norm} to move to the next section in the view",
         "keymap_def_next_mark": "Press ${ansi_bold}c${ansi_norm} to copy marked lines to the clipboard; press ${ansi_bold}C${ansi_norm} to clear marked lines",
-        "keymap_def_time_offset": "Press ${ansi_bold}s${ansi_norm}/${ansi_bold}S${ansi_norm} to move forward/backward through slow downs"
+        "keymap_def_time_offset": "Press ${ansi_bold}s${ansi_norm}/${ansi_bold}S${ansi_norm} to move forward/backward through slow downs",
+        "keymap_def_breakpoint": "Press ${ansi_bold}F7${ansi_norm}/${ansi_bold}F8${ansi_norm} to move to the previous/next breakpoint"
     },
     "ui": {
         "keymap-defs": {
             "default": {
                 "f1": {
                     "command": ":help"
+                },
+                "f7": {
+                    "command": "|lnav-moveto-breakpoint prev"
+                },
+                "f8": {
+                    "command": "|lnav-moveto-breakpoint next"
+                },
+                "x02": {
+                    "command": ":toggle-breakpoint",
+                    "alt-msg": "${keymap_def_breakpoint}"
+                },
+                "x13": {
+                    "command": ":toggle-sticky-header"
                 },
                 "x31": {
                     "command": ":goto next 10 minutes after the hour"
@@ -68,7 +82,7 @@
                     "command": ";UPDATE lnav_top_view SET selection = CASE WHEN name = 'log' AND log_msg_line() != selection THEN log_msg_line() ELSE max(0, selection - inner_height / 10) END"
                 },
                 "x06": {
-                    "command": ";UPDATE lnav_view_filters SET enabled = 1 - enabled WHERE view_name = (SELECT name FROM lnav_view_stack WHERE name in ('log', 'text') ORDER BY rowid DESC LIMIT 1)"
+                    "command": ":toggle-filtering"
                 },
                 "x0c": {
                     "command": ":write-screen-to -"

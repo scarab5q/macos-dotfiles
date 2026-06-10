@@ -85,7 +85,7 @@
             "bold": true
           },
           "error": {
-            "color": "$red",
+            "color": "$red_intense",
             "bold": true
           },
           "warning": {
@@ -133,6 +133,9 @@
           "scrollbar": {
             "color": "$fg_dim",
             "background-color": "$bg_active"
+          },
+          "timeline-bar": {
+            "background-color": "$cyan_subtle"
           },
           "h1": {
             "color": "$cyan",
@@ -297,6 +300,11 @@
             "background-color": "#5394ec",
             "bold": true
           },
+          "alert-title": {
+            "color": "$red",
+            "background-color": "#5394ec",
+            "bold": true
+          },
           "subtitle": {
             "color": "#555",
             "background-color": "#66d9ee",
@@ -324,7 +332,7 @@
             "background-color": "#c8c8c8"
           },
           "alert": {
-            "color": "$red",
+            "color": "$red_intense",
             "background-color": "#c8c8c8"
           },
           "active": {
@@ -333,6 +341,10 @@
           },
           "inactive": {
             "color": "$fg_dim",
+            "background-color": "#e6e6e6"
+          },
+          "inactive-warn": {
+            "color": "$yellow",
             "background-color": "#e6e6e6"
           },
           "inactive-alert": {

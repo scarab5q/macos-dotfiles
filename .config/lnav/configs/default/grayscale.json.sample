@@ -29,7 +29,8 @@
                         "bold": true
                     },
                     "alt-text": {
-                        "bold": true
+                        "bold": true,
+                        "background-color": "#222"
                     },
                     "ok": {
                         "color": "$green",
@@ -93,9 +94,16 @@
                         "color": "$plaintext",
                         "background-color": "#424242"
                     },
+                    "popup-border": {
+                        "color": "#888",
+                        "background-color": "#424242"
+                    },
                     "scrollbar": {
                         "color": "$black",
                         "background-color": "#888"
+                    },
+                    "timeline-bar": {
+                        "background-color": "#444"
                     },
                     "h1": {
                         "bold": true,
@@ -178,6 +186,21 @@
                     },
                     "number": {
                         "bold": true
+                    },
+                    "spectrogram-high": {
+                        "color": "$black",
+                        "background-color": "#fff",
+                        "bold": true
+                    },
+                    "spectrogram-medium": {
+                        "color": "$black",
+                        "background-color": "#aaa",
+                        "bold": true
+                    },
+                    "spectrogram-low": {
+                        "color": "$black",
+                        "background-color": "#666",
+                        "bold": true
                     }
                 },
                 "status-styles": {
@@ -188,6 +211,11 @@
                     },
                     "title": {
                         "color": "#f6f6f6",
+                        "background-color": "#8a8a8a",
+                        "bold": true
+                    },
+                    "alert-title": {
+                        "color": "$red",
                         "background-color": "#8a8a8a",
                         "bold": true
                     },
@@ -227,6 +255,10 @@
                     },
                     "inactive": {
                         "color": "#555",
+                        "background-color": "#2f2f2f"
+                    },
+                    "inactive-warn": {
+                        "color": "$yellow",
                         "background-color": "#2f2f2f"
                     },
                     "inactive-alert": {
