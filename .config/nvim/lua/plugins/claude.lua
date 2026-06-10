@@ -9,7 +9,7 @@ return {
     dependencies = { "folke/snacks.nvim" },
     config = function()
       require("claudecode").setup({
-        auto_start = true, -- WS server for diff display; yank server handles connection/nvim tools
+        auto_start = false, -- opt in via :ClaudeCode; prevents stray Claude sessions pushing diffs here
         terminal = {
           cwd_provider = function(ctx)
             local dir = ctx.file_dir or vim.fn.getcwd()
