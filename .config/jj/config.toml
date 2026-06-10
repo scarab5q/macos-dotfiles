@@ -10,6 +10,7 @@ thing = ["new", "trunk()"]
 [revset-aliases]
 "current_bookmark()" = "heads(bookmarks() & ::@)"
 "current_bookmark_remote()" = "heads(remote_bookmarks() & ::@)"
+"trunk" = "trunk()"
 
 
 [ui]
