@@ -1,0 +1,195 @@
+# ---- language servers ----
+
+[language-server.helix-assist]
+command = "helix-assist"
+# Optional
+args = ["--handler", "anthropic", "--num-suggestions", "2"]
+
+[language-server.oxlint]
+command = "oxlint"
+args = ["--lsp"]
+
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+config = { hostInfo = "helix", typescript = { tsserver = { logVerbosity = "off" } } }
+
+[language-server.vscode-json-language-server]
+command = "vscode-json-language-server"
+args = ["--stdio"]
+config = { provideFormatter = true, json = { validate = { enable = true } } }
+
+[language-server.vscode-css-language-server]
+command = "vscode-css-language-server"
+args = ["--stdio"]
+config = { provideFormatter = true, css = { validate = true }, scss = { validate = true }, less = { validate = true } }
+
+[language-server.vscode-html-language-server]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+config = { provideFormatter = true }
+
+[language-server.vscode-eslint-language-server]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.yaml-language-server]
+command = "yaml-language-server"
+args = ["--stdio"]
+config = { yaml = { schemas = { "https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}", "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json" = "docker-compose*.{yml,yaml}" }, format = { enable = true } } }
+
+[language-server.bash-language-server]
+command = "bash-language-server"
+args = ["start"]
+
+[language-server.lua-language-server]
+command = "lua-language-server"
+
+[language-server.taplo]
+command = "taplo"
+args = ["lsp", "stdio"]
+
+[language-server.marksman]
+command = "marksman"
+args = ["server"]
+
+[language-server.prisma-language-server]
+command = "prisma-language-server"
+args = ["--stdio"]
+
+[language-server.docker-langserver]
+command = "docker-langserver"
+args = ["--stdio"]
+
+[language-server.zls]
+command = "zls"
+config = { enable_build_on_save = true, enable_inlay_hints = true, warn_style = true, highlight_global_var_declarations = true }
+
+# ---- languages ----
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server", "oxlint"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath=file.ts"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server", "oxlint"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath=file.tsx"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server", "oxlint"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath=file.js"] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = ["typescript-language-server", "oxlint"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath=file.jsx"] }
+auto-format = true
+
+[[language]]
+name = "json"
+language-servers = ["vscode-json-language-server"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath=file.json"] }
+auto-format = true
+
+[[language]]
+name = "jsonc"
+language-servers = ["vscode-json-language-server"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath=file.jsonc"] }
+auto-format = true
+
+[[language]]
+name = "yaml"
+language-servers = ["yaml-language-server"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath=file.yaml"] }
+auto-format = true
+
+[[language]]
+name = "bash"
+language-servers = ["bash-language-server"]
+file-types = [
+  # Bare strings match by extension (foo.sh, foo.bash).
+  "sh",
+  "bash",
+  "zsh",
+  "ebuild",
+  "eclass",
+  # Globs match by full filename — needed for dotfiles like ~/.zshrc, which
+  # have no extension. The extension form ("zshrc") only catches `foo.zshrc`.
+  { glob = ".zshrc" },
+  { glob = ".zshenv" },
+  { glob = ".zprofile" },
+  { glob = ".zlogin" },
+  { glob = ".zlogout" },
+  { glob = ".bashrc" },
+  { glob = ".bash_profile" },
+  { glob = ".bash_login" },
+  { glob = ".bash_logout" },
+  { glob = ".bash_aliases" },
+  { glob = ".profile" },
+]
+
+[[language]]
+name = "lua"
+language-servers = ["lua-language-server"]
+auto-format = false
+
+[[language]]
+name = "toml"
+language-servers = ["taplo"]
+formatter = { command = "taplo", args = ["format", "-"] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman"]
+auto-format = false
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server"]
+
+[[language]]
+name = "scss"
+language-servers = ["vscode-css-language-server"]
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server"]
+
+[[language]]
+name = "prisma"
+scope = "source.prisma"
+file-types = ["prisma"]
+roots = ["schema.prisma", "package.json"]
+comment-token = "//"
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["prisma-language-server"]
+auto-format = true
+
+[[language]]
+name = "dockerfile"
+language-servers = ["docker-langserver"]
+
+[[language]]
+name = "zig"
+language-servers = ["zls"]
+formatter = { command = "zig", args = ["fmt", "--stdin"] }
+auto-format = true
+
+[[language]]
+name = "go"
+language-servers = ["gopls", "helix-assist"]
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server", "helix-assist"]
+
+[[language]]
+name = "python"
+language-servers = ["pylsp", "helix-assist"]
