@@ -1,0 +1,39 @@
+#!/bin/bash
+# jj-sync — fetch latest trunk and restack a branch onto it, cleanly.
+#
+# Backs the `jj sync` alias. Fixes two recurring papercuts that a bare
+# `jj rebase -b X -d trunk()` does NOT handle:
+#
+#   1. --skip-emptied: when a lower PR in your stack gets squash-merged into
+#      trunk, its local commit becomes empty during the rebase and is dropped
+#      automatically — so the stack closes up instead of leaving empty husks.
+#
+#   2. divergence repair: GitHub's "Update branch" button lands an empty
+#      "Merge branch 'dev' into <branch>" commit on origin. `jj git fetch` then
+#      makes your bookmark divergent (??), and `jj rebase -b <name>` can't act on
+#      a conflicted name. If the synced bookmark is divergent we keep YOUR local
+#      commit (<name>@git) and drop the remote merge side, then rebase.
+#      (Assumes solo branches — @git-wins would discard a collaborator's pushed
+#      commits. Fine for jack/* branches.)
+#
+# Usage:
+#   jj sync            # restack the current stack (@) onto trunk()
+#   jj sync jack/foo   # restack that bookmark/revset onto trunk()
+set -uo pipefail
+
+target=${1:-@}
+
+jj root >/dev/null 2>&1 || { echo "not inside a jj repo" >&2; exit 1; }
+
+echo "==> jj git fetch"
+jj git fetch || exit 1
+
+# If a named bookmark went divergent on fetch (e.g. a GitHub "Update branch"
+# merge landed on origin), prefer your local commit before rebasing.
+if [ "$target" != "@" ] && jj bookmark list "$target" 2>/dev/null | grep -q 'conflicted'; then
+  echo "==> '$target' diverged on fetch — resetting to local ($target@git), dropping remote merge"
+  jj bookmark set "$target" -r "$target@git"
+fi
+
+echo "==> jj rebase -b $target -d trunk() --skip-emptied"
+jj rebase -b "$target" -d 'trunk()' --skip-emptied
