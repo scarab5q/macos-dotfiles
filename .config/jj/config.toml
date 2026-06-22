@@ -5,11 +5,13 @@ diff-remote = ["diff", "--from", "current_bookmark_remote()", "--to", "current_b
 push = ["git", "push", "-b"]
 track = ["bookmark", "track"]
 thing = ["new", "trunk()"]
-# Fetch latest dev and re-peg the whole current stack (@ plus everything under it) onto trunk().
+# Fetch latest dev and re-peg a stack onto trunk(). With no arg, restacks the current one (@);
+# pass a bookmark/revset to restack that instead, e.g. `jj sync jack/foo`.
 # jj never auto-rebases across a fetch (commits are pinned by parent commit-id), so this is the
 # one-shot "pull + restack". Deliberately a command, not a fetch hook, so any conflicts the
 # rebase bakes in surface in the output instead of silently landing in your commits.
-sync = ["util", "exec", "--", "zsh", "-c", "jj git fetch && jj rebase -b @ -d 'trunk()'"]
+# (trailing "jj-sync" is $0 so a user-supplied arg lands in $1.)
+sync = ["util", "exec", "--", "zsh", "-c", "jj git fetch && jj rebase -b ${1:-@} -d 'trunk()'", "jj-sync"]
 
 
 [revset-aliases]
