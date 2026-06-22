@@ -1,0 +1,84 @@
+#!/bin/bash
+# jj-sweep — abandon local bookmarks whose GitHub PR was squash-merged.
+#
+# Why: a squash merge lands your branch as ONE new commit on trunk with a fresh
+# hash, so jj can't tell via ancestry that the branch is merged and won't clean
+# it up. GitHub knows, so we ask `gh`, then for each MERGED branch rebase it onto
+# trunk() with --skip-emptied:
+#   * branch empties out          -> fully merged  -> `jj bookmark forget`
+#   * work remains (or conflicts) -> KEPT + reported (commits not in the PR, or
+#                                    trunk moved under it — your call what to do)
+# CLOSED-unmerged / OPEN / no-PR branches are reported and left untouched.
+#
+# Usage:
+#   jj-sweep [glob]           # dry-run (default); glob defaults to 'jack/*'
+#   jj-sweep --apply [glob]   # actually rebase + forget the merged branches
+#
+# Runs `jj git fetch` first. In a repo shared with another jj agent, serialize via
+# the agent lock:  flock -x .jj/.agent-jj.lock jj-sweep --apply
+
+set -uo pipefail
+
+APPLY=0
+GLOB='jack/*'
+for a in "$@"; do
+  case "$a" in
+    --apply)   APPLY=1 ;;
+    --dry-run) APPLY=0 ;;
+    -*)        echo "unknown flag: $a" >&2; exit 2 ;;
+    *)         GLOB="$a" ;;
+  esac
+done
+
+command -v gh >/dev/null 2>&1 || { echo "gh not found on PATH" >&2; exit 1; }
+jj root >/dev/null 2>&1        || { echo "not inside a jj repo" >&2; exit 1; }
+
+# Never touch local-only / integration bookmarks even if they somehow look merged.
+PROTECT='local-dev-mocks|local[-_]claude|local-dev'
+
+echo "==> jj git fetch"
+jj git fetch || { echo "fetch failed" >&2; exit 1; }
+
+# Local bookmark names matching the glob: top-level (non-indented) lines from
+# `jj bookmark list`, trimmed at the first of ':', '*' or space.
+BOOKMARKS=()
+while IFS= read -r b || [ -n "$b" ]; do
+  [ -z "$b" ] && continue
+  echo "$b" | grep -Eq "$PROTECT" && continue
+  BOOKMARKS+=("$b")
+done < <(jj bookmark list "glob:$GLOB" 2>/dev/null | grep -E '^[^[:space:]]' | sed -E 's/[:* ].*//' | sort -u)
+
+if [ "${#BOOKMARKS[@]}" -eq 0 ]; then
+  echo "no local bookmarks match 'glob:$GLOB'"; exit 0
+fi
+
+[ "$APPLY" -eq 1 ] && echo "mode: APPLY" || echo "mode: DRY-RUN (pass --apply to act)"
+echo
+
+forgot=(); kept=(); left=()
+for b in "${BOOKMARKS[@]}"; do
+  state=$(gh pr list --head "$b" --state all --json state --jq '.[0].state // "NONE"' 2>/dev/null)
+  state=${state:-NONE}
+  case "$state" in
+    MERGED)
+      if [ "$APPLY" -eq 0 ]; then
+        printf "  MERGED   %-45s -> would restack --skip-emptied, forget if emptied\n" "$b"
+        continue
+      fi
+      jj rebase -s "$b" -d 'trunk()' --skip-emptied >/dev/null 2>&1
+      # If the bookmark now resolves at/under trunk, the commit emptied (fully merged).
+      if [ -n "$(jj log --no-graph -r "$b & ::trunk()" -T '"x"' 2>/dev/null)" ]; then
+        jj bookmark forget "$b" >/dev/null 2>&1
+        forgot+=("$b"); printf "  FORGOT   %-45s (fully merged)\n" "$b"
+      else
+        kept+=("$b");   printf "  KEPT     %-45s (merged, but extra work/conflict remains)\n" "$b"
+      fi
+      ;;
+    CLOSED) left+=("$b"); printf "  CLOSED   %-45s (closed unmerged — left alone)\n" "$b" ;;
+    OPEN)   left+=("$b"); printf "  OPEN     %-45s\n" "$b" ;;
+    *)      left+=("$b"); printf "  NO-PR    %-45s\n" "$b" ;;
+  esac
+done
+
+echo
+echo "summary: forgot=${#forgot[@]}  kept=${#kept[@]}  untouched=${#left[@]}"
