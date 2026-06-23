@@ -197,6 +197,38 @@ source $"($nu.cache-dir)/carapace.nu"
 # Git completions (from nu_scripts)
 use ~/.config/nushell/nu_scripts/custom-completions/git/git-completions.nu *
 
+# jj wrapper. Two jobs:
+#  1. `jj autoclear` dispatches to ~/scripts/jj-autoclear (jj 0.41 has no
+#     external-subcommand support, so we intercept here).
+#  2. Serialize every jj invocation with flock on a lockfile in the shared repo
+#     store. Multiple agents in separate jj workspaces share one .jj/repo (op
+#     log + commit store), so concurrent jj commands race and produce divergent
+#     operations/changes. One exclusive lock per repo makes them take turns.
+def --wrapped jj [...rest] {
+  # --ignore-working-copy: pure read, no snapshot op, so this lookup can't race.
+  let root = (^jj root --ignore-working-copy | complete)
+  let lock = (if $root.exit_code == 0 {
+    let link = ($root.stdout | str trim | path join ".jj/repo")
+    # Main workspace: .jj/repo is a dir. Secondary: a file pointing at the main
+    # repo. Either way all workspaces resolve to one lockfile.
+    let store = (if ($link | path type) == "dir" { $link } else { open --raw $link | str trim })
+    $store | path dirname | path join ".agent-jj.lock"
+  } else { null })
+
+  let prog = (if (($rest | length) > 0) and (($rest | first) == "autoclear") {
+    [($env.HOME | path join "scripts/jj-autoclear")] ++ ($rest | skip 1)
+  } else {
+    ["jj"] ++ $rest
+  })
+
+  # -w 30: a hung network op (push/fetch) can't block other panes forever.
+  if $lock != null {
+    ^flock -x -w 30 $lock ...$prog
+  } else {
+    ^($prog | first) ...($prog | skip 1)
+  }
+}
+
 # ============================================================
 # PATH ADDITIONS (must be at end to survive direnv/atuin)
 # ============================================================

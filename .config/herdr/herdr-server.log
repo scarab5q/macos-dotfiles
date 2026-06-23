@@ -297,3 +297,617 @@
 2026-06-10T14:41:06.327125Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
 2026-06-10T14:41:23.672347Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
 2026-06-10T14:41:28.676955Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-10T14:48:03.967886Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T14:57:09.008262Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-10T14:57:10.663182Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-10T14:57:10.776336Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-10T15:18:04.013175Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T15:21:31.628631Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:21:36.637236Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-10T15:21:44.296848Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:21:45.035603Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:21:45.522529Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:21:46.069090Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:21:47.302429Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:21:47.931159Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:21:52.943165Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-10T15:23:38.835723Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:23:40.586432Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:23:40.920504Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:23:41.223900Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:23:41.470905Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:23:41.753403Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:23:42.169277Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:23:42.452594Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:23:45.127361Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e738416e784"
+2026-06-10T15:23:45.127492Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e738416e784" tab_id="w653e738416e784:1"
+2026-06-10T15:23:50.139592Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-10T15:24:15.594250Z  INFO herdr::logging: workspace renamed event="workspace.rename" subsystem="workspace" outcome="ok" workspace_id="w653e738416e784"
+2026-06-10T15:24:18.458913Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-10T15:24:18.459060Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:24:20.037440Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:24:21.619082Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:1"
+2026-06-10T15:24:25.377693Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:24:26.689914Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:1"
+2026-06-10T15:24:28.044881Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:24:29.008403Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:24:30.174425Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:24:31.167245Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-10T15:24:36.174627Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-10T15:25:24.561009Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e738416e784"
+2026-06-10T15:25:24.561852Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e738416e784" tab_id="w653e738416e784:1"
+2026-06-10T15:25:28.805452Z  INFO herdr::logging: workspace closed event="workspace.close" subsystem="workspace" outcome="ok" workspace_id="w653e738416e784"
+2026-06-10T15:25:29.090065Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=6 status="ExitStatus { code: 1, signal: None }"
+2026-06-10T15:25:29.504526Z  INFO herdr::pane: pane session terminated pane=6 pid=74249 signal=Terminate
+2026-06-10T15:25:29.504717Z  WARN herdr::app::actions: PaneDied for unknown pane pane=6
+2026-06-10T15:25:33.819802Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-10T15:48:03.982264Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T16:06:54.140420Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-10T16:06:54.655483Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-10T16:06:55.901599Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-10T16:06:56.009018Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-10T16:18:03.976942Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T16:25:48.870606Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-10T16:25:49.396991Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-10T16:25:50.644305Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-10T16:48:04.007800Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T16:58:28.238644Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-10T16:58:28.464637Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-10T16:58:29.993479Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-10T16:58:30.095314Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-10T17:11:43.903236Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-10T18:23:46.013775Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T18:53:46.022781Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T19:23:45.971362Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T20:35:43.212442Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T21:11:22.425026Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T21:41:22.418368Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T22:11:22.432281Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-10T22:11:22.731298Z  INFO herdr::logging: update available event="update.available" subsystem="update" outcome="ok" version="0.6.9"
+2026-06-10T22:11:22.904631Z  INFO herdr::update: auto-update check: v0.6.9 available through Homebrew, waiting for explicit install
+2026-06-11T08:13:57.632186Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T08:13:58.360307Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T08:13:58.643165Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T08:13:59.830917Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T08:51:01.793873Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T08:51:02.206613Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T08:51:03.753622Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-11T08:51:03.860573Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T09:59:03.355991Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T09:59:03.858212Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T09:59:04.990033Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T11:38:45.074766Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T11:38:45.509373Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T11:38:46.844649Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T13:21:26.525324Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T13:21:27.195197Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T13:21:28.404047Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-11T13:21:28.504301Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T15:43:53.332962Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T15:43:53.762779Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T15:43:54.881909Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-11T15:43:54.983992Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T16:20:20.987826Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T16:20:23.787391Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T16:20:28.803715Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-11T16:34:42.437888Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T16:34:42.649105Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T16:34:44.189560Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-11T16:34:44.299407Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T17:02:33.255033Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T17:02:33.618381Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T17:02:34.996010Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-11T17:02:35.101256Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T17:02:35.819717Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T17:02:35.923747Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T17:02:37.175024Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-11T17:02:37.275210Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T17:03:18.779774Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T17:03:18.879955Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T17:03:20.662341Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T19:05:25.895278Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T19:05:26.137885Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T19:05:27.678396Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-11T19:05:27.790803Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T19:46:51.324089Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-11T19:46:51.844282Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T19:46:54.641181Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-11T19:46:54.806560Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T19:46:55.579917Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T19:46:57.334147Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-11T19:46:57.436295Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-11T21:22:14.029661Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-11T21:47:42.379874Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:47:42.913488Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:47:46.026033Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:47:46.771569Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:47:47.309808Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:47:47.742967Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:47:51.259117Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:47:56.267458Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-11T21:48:02.265086Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:48:03.147062Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:48:03.826185Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:48:08.832632Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-11T21:48:34.980053Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:48:39.988573Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-11T21:48:46.002884Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:48:51.012046Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-11T21:49:01.604404Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:04.877888Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:05.320445Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:05.702871Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:06.857657Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:07.265973Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:07.675955Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:08.055201Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:08.281651Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:08.777765Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:09.094452Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:10.074410Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:17.638526Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-11T21:49:18.978963Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-11T21:49:23.988321Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T08:52:04.997669Z  INFO herdr::server::headless: client resize client_id=6 cols=159 rows=52 cell_width_px=0 cell_height_px=0
+2026-06-12T08:52:07.449638Z  INFO herdr::server::headless: client resize client_id=6 cols=182 rows=52 cell_width_px=0 cell_height_px=0
+2026-06-12T08:52:07.552857Z  INFO herdr::server::headless: client resize client_id=6 cols=188 rows=52 cell_width_px=0 cell_height_px=0
+2026-06-12T08:52:08.819121Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:12.462790Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:13.074055Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:18.088965Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T08:52:36.239804Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:36.939978Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:37.520926Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:37.883796Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:38.168951Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:38.445450Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:38.666950Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:38.923792Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:39.098280Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:39.234151Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:39.370003Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:39.484367Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:39.590171Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:39.690087Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:39.837348Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:39.946050Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:40.239696Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:40.596203Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:40.892866Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:41.264350Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:46.022442Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:46.583448Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:46.878353Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:47.300680Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:49.042460Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T08:52:53.000069Z  INFO herdr::server::headless: client resize client_id=6 cols=159 rows=52 cell_width_px=0 cell_height_px=0
+2026-06-12T08:52:54.053369Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T09:45:44.500166Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T09:45:49.513679Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T09:47:21.603147Z  INFO herdr::logging: workspace renamed event="workspace.rename" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-12T09:47:26.612154Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T09:48:05.653751Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T09:48:10.665449Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T09:48:13.407180Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T09:48:18.414318Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T09:48:41.678433Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T09:49:09.229914Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=8 rows=51 cols=67 scrollback_limit_bytes=10000000
+2026-06-12T09:49:09.237414Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=8 pid=34404
+2026-06-12T09:49:09.237534Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:3"
+2026-06-12T09:49:09.237606Z  INFO herdr::logging: tab created event="tab.create" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:3" pane_id=8
+2026-06-12T09:49:14.246911Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T09:49:25.606708Z  INFO herdr::logging: tab closed event="tab.close" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:3"
+2026-06-12T09:49:25.639531Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=8 status="ExitStatus { code: 1, signal: None }"
+2026-06-12T09:49:25.662681Z  INFO herdr::pane: pane session terminated pane=8 pid=34404 signal=Hangup
+2026-06-12T09:49:25.662776Z  WARN herdr::app::actions: PaneDied for unknown pane pane=8
+2026-06-12T09:49:30.622417Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T09:49:42.885826Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T09:52:10.010708Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T09:52:10.427527Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T09:52:15.438208Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T10:01:37.421216Z  INFO herdr::server::headless: client disconnected client_id=6
+2026-06-12T10:33:25.027620Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-12T10:33:25.846796Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-12T10:33:27.193160Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-12T10:33:27.298500Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-12T10:33:28.650577Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=57 cell_width_px=0 cell_height_px=0
+2026-06-12T10:33:28.747463Z  INFO herdr::server::headless: client resize client_id=2 cols=188 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-12T10:33:31.431961Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=61 cell_width_px=0 cell_height_px=0
+2026-06-12T10:33:31.533116Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-12T10:35:35.248481Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=47 cell_width_px=0 cell_height_px=0
+2026-06-12T10:35:43.538205Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=50 cell_width_px=0 cell_height_px=0
+2026-06-12T10:35:43.643270Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=53 cell_width_px=0 cell_height_px=0
+2026-06-12T10:35:45.944076Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T10:35:46.424883Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T10:35:46.793609Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T10:35:50.708089Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:1"
+2026-06-12T10:35:55.715631Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T10:35:55.724355Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T10:36:00.729364Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=1
+2026-06-12T10:36:05.407961Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=9 rows=52 cols=52 scrollback_limit_bytes=10000000
+2026-06-12T10:36:05.414555Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=9 pid=34977
+2026-06-12T10:36:05.414807Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565" pane_id=9
+2026-06-12T10:36:05.414862Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T10:36:05.414974Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:36:10.427842Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:36:20.825417Z  INFO herdr::logging: workspace renamed event="workspace.rename" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T10:36:24.441560Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=10 rows=26 cols=51 scrollback_limit_bytes=10000000
+2026-06-12T10:36:24.446839Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=10 pid=36013
+2026-06-12T10:36:25.474543Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:36:27.288777Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=11 rows=13 cols=51 scrollback_limit_bytes=10000000
+2026-06-12T10:36:27.293636Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=11 pid=36602
+2026-06-12T10:36:27.891190Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:36:32.900638Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:37:19.058592Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:37:24.066298Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:37:37.534892Z  INFO herdr::logging: tab renamed event="tab.rename" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:37:39.591390Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:37:44.598044Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:37:49.010180Z  INFO herdr::logging: tab renamed event="tab.rename" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:37:50.361353Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:37:50.942507Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:37:55.947800Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:38:17.585033Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:38:22.592682Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:38:26.762473Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:38:29.026248Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:38:34.034600Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:38:39.699445Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=12 rows=13 cols=26 scrollback_limit_bytes=10000000
+2026-06-12T10:38:39.706215Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=12 pid=41114
+2026-06-12T10:38:44.714861Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:39:02.524923Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:39:07.533755Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:39:15.608493Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:39:20.612275Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:39:44.782343Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:39:49.787102Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:39:51.241327Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:39:56.244755Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:40:15.280306Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:40:20.288511Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:40:41.931727Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-12T10:40:41.932056Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T10:40:44.216429Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:1"
+2026-06-12T10:40:45.680190Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T10:40:45.680504Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:40:47.261785Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-12T10:40:47.261899Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:1"
+2026-06-12T10:40:50.287841Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T10:40:50.287908Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:40:55.305436Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:40:55.324900Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:41:00.358598Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:44:48.928394Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:44:53.963333Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:45:30.691952Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:45:35.739253Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:45:47.648634Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=2
+2026-06-12T10:52:31.675836Z  INFO herdr::server::headless: client connected client_id=8 cols=239 rows=63 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-06-12T10:52:47.894283Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=13 rows=43 cols=128 scrollback_limit_bytes=10000000
+2026-06-12T10:52:47.902000Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=13 pid=71991
+2026-06-12T10:52:47.902416Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w6540c4701c1e66" pane_id=13
+2026-06-12T10:52:47.902449Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c4701c1e66"
+2026-06-12T10:52:47.902471Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c4701c1e66" tab_id="w6540c4701c1e66:1"
+2026-06-12T10:52:51.602546Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T10:52:51.602660Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T10:52:55.435562Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c4701c1e66"
+2026-06-12T10:52:55.435630Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c4701c1e66" tab_id="w6540c4701c1e66:1"
+2026-06-12T10:52:56.826209Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-12T10:52:56.826651Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:1"
+2026-06-12T10:53:00.235947Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T10:53:05.247142Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T10:57:19.915808Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T10:57:24.928515Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T10:58:59.732801Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T10:59:00.098705Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T10:59:00.531959Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T10:59:05.542642Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T10:59:44.967848Z  INFO herdr::server::headless: client detach requested via keybind client_id=8
+2026-06-12T10:59:44.970230Z  INFO herdr::server::headless: client disconnected client_id=8
+2026-06-12T11:00:11.824878Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T11:00:11.824979Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:00:12.948401Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c4701c1e66"
+2026-06-12T11:00:12.948478Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c4701c1e66" tab_id="w6540c4701c1e66:1"
+2026-06-12T11:00:13.601725Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-12T11:00:13.601823Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T11:00:14.808256Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:1"
+2026-06-12T11:00:15.567500Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T11:00:16.353649Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T11:00:16.353721Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:00:21.373685Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:00:27.478516Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c4701c1e66"
+2026-06-12T11:00:27.478661Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c4701c1e66" tab_id="w6540c4701c1e66:1"
+2026-06-12T11:00:28.571369Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-12T11:00:28.571411Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T11:00:33.584491Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:00:51.951035Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T11:01:07.588070Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T11:01:07.588167Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:01:11.615844Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-12T11:01:11.615909Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T11:01:16.626350Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:01:20.199938Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T11:01:20.199994Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:01:25.216494Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:03:15.751270Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:15.854905Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=66 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:15.956648Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=72 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:16.057126Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=83 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:16.159481Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=89 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:16.262242Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=92 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:16.365789Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=93 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:16.467509Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=95 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:16.570078Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=97 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:16.672809Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=98 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:16.876086Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=99 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:17.079888Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=100 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:17.288525Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=101 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:18.006004Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=102 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:18.106277Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=103 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:18.207543Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=104 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:18.412766Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=105 cell_width_px=0 cell_height_px=0
+2026-06-12T11:03:23.214156Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:03:28.231569Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:03:57.262093Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:03:57.758449Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:03:58.212933Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:04:03.233651Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:04:03.328767Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:04:03.631538Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:04:04.093662Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:04:09.113251Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:05:09.104755Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:05:28.122134Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:05:33.137287Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:06:00.432866Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T11:10:50.044943Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:10:51.929610Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:10:56.946691Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:11:03.815004Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T11:11:04.706332Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T11:11:11.219074Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:11:32.752285Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T11:11:39.873579Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:11:46.547458Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:11:48.045089Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:11:49.244836Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:11:54.262608Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:12:40.155966Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c4701c1e66"
+2026-06-12T11:12:40.156980Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c4701c1e66" tab_id="w6540c4701c1e66:1"
+2026-06-12T11:12:40.808066Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-12T11:12:40.808133Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T11:12:43.646040Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T11:12:44.177464Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T11:12:49.188263Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:16:07.477534Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T11:16:07.534169Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T11:16:08.756941Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T11:16:08.756999Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:16:09.306643Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:16:14.330885Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:16:41.092801Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:16:46.115672Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:17:45.305755Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:17:50.352529Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:22:03.909037Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T11:24:00.332417Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:24:07.509457Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:24:10.258456Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:24:34.605360Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:24:34.615076Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:24:39.659993Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T11:29:56.508614Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:29:57.157988Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:29:57.525742Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:29:57.876209Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:29:58.177183Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:29:58.478422Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:29:58.759571Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:29:59.142207Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:29:59.409909Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:00.042176Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:00.325052Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:00.575580Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:00.891405Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:01.176397Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:01.426196Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:01.758131Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:02.026511Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:02.274706Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:02.494546Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:02.757853Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:02.817255Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T11:30:03.058870Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:03.310199Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:03.526018Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:03.808097Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:04.127602Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:04.376071Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:04.626193Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:04.957832Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:05.208158Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:05.459683Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:05.692778Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:06.041266Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:06.308303Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:06.557845Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:06.774985Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:07.141336Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:07.425742Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:07.474216Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T11:30:07.691375Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:07.926519Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:08.354497Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T11:30:13.387172Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T12:43:07.688253Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=47 cell_width_px=0 cell_height_px=0
+2026-06-12T12:43:07.791690Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=53 cell_width_px=0 cell_height_px=0
+2026-06-12T12:43:08.935261Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=47 cell_width_px=0 cell_height_px=0
+2026-06-12T12:43:09.244263Z  INFO herdr::server::headless: client resize client_id=2 cols=239 rows=28 cell_width_px=0 cell_height_px=0
+2026-06-12T12:46:07.827282Z  INFO herdr::server::headless: client resize client_id=2 cols=174 rows=39 cell_width_px=0 cell_height_px=0
+2026-06-12T12:46:07.932152Z  INFO herdr::server::headless: client resize client_id=2 cols=135 rows=46 cell_width_px=0 cell_height_px=0
+2026-06-12T12:46:08.036356Z  INFO herdr::server::headless: client resize client_id=2 cols=130 rows=47 cell_width_px=0 cell_height_px=0
+2026-06-12T12:46:08.141451Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=47 cell_width_px=0 cell_height_px=0
+2026-06-12T12:46:10.592852Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=55 cell_width_px=0 cell_height_px=0
+2026-06-12T12:46:10.697671Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=102 cell_width_px=0 cell_height_px=0
+2026-06-12T12:46:10.799237Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=108 cell_width_px=0 cell_height_px=0
+2026-06-12T12:46:10.903636Z  INFO herdr::server::headless: client resize client_id=2 cols=129 rows=109 cell_width_px=0 cell_height_px=0
+2026-06-12T12:46:11.605652Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:46:13.838176Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:46:18.886975Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T12:46:44.803646Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:46:47.098377Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T12:46:53.861975Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:46:59.519300Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:46:59.920229Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:47:00.336329Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:47:07.435970Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T12:47:15.255888Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:47:20.308829Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T12:48:04.920964Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:48:06.701092Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:48:11.743390Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T12:51:23.979287Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:51:36.852452Z  INFO herdr::server::headless: client disconnected client_id=2
+2026-06-12T12:51:36.861806Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T12:52:52.347951Z  INFO herdr::server::headless: client connected client_id=10 cols=239 rows=59 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-06-12T12:52:55.317342Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:52:55.904065Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:52:58.954337Z  INFO herdr::server::headless: client resize client_id=10 cols=170 rows=90 cell_width_px=0 cell_height_px=0
+2026-06-12T12:52:59.055320Z  INFO herdr::server::headless: client resize client_id=10 cols=136 rows=105 cell_width_px=0 cell_height_px=0
+2026-06-12T12:52:59.156133Z  INFO herdr::server::headless: client resize client_id=10 cols=130 rows=108 cell_width_px=0 cell_height_px=0
+2026-06-12T12:52:59.257873Z  INFO herdr::server::headless: client resize client_id=10 cols=129 rows=109 cell_width_px=0 cell_height_px=0
+2026-06-12T12:53:00.083962Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:00.417634Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:00.800754Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:01.100652Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:01.467387Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:01.900893Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:02.267264Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:02.601884Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:03.984886Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-12T12:53:03.985006Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T12:53:07.450684Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T12:53:09.998861Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c4701c1e66"
+2026-06-12T12:53:09.998941Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c4701c1e66" tab_id="w6540c4701c1e66:1"
+2026-06-12T12:53:15.025335Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T12:53:18.779578Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T12:53:18.779690Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:19.350630Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:29.567262Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:30.405076Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:53:35.462237Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T12:55:39.602091Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:55:44.666553Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T12:58:15.649877Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:58:24.849588Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:58:29.879857Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T12:58:52.149837Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T12:58:57.178605Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T13:00:01.069077Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-12T13:00:01.069295Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T13:00:06.091730Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T13:00:51.561325Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T13:00:51.561404Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T13:00:52.183332Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T13:00:54.450147Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T13:00:59.487496Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T13:01:28.833207Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w653e728c3a3ef3"
+2026-06-12T13:01:28.834207Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w653e728c3a3ef3" tab_id="w653e728c3a3ef3:2"
+2026-06-12T13:01:30.841025Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6540c0b4103565"
+2026-06-12T13:01:30.841099Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T13:01:35.863446Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T13:02:11.325226Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T13:02:16.371166Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T13:02:16.638862Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T13:02:18.319879Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T13:06:48.865779Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T13:06:53.923433Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T13:28:13.926708Z  INFO herdr::server::headless: client resize client_id=10 cols=129 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T13:28:14.131931Z  INFO herdr::server::headless: client resize client_id=10 cols=239 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T13:28:15.590458Z  INFO herdr::server::headless: client resize client_id=10 cols=129 rows=109 cell_width_px=0 cell_height_px=0
+2026-06-12T13:42:56.777963Z  INFO herdr::server::headless: client resize client_id=10 cols=239 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T13:42:57.290719Z  INFO herdr::server::headless: client resize client_id=10 cols=183 rows=53 cell_width_px=0 cell_height_px=0
+2026-06-12T13:48:11.873740Z  INFO herdr::server::headless: client resize client_id=10 cols=234 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T13:48:12.506191Z  INFO herdr::server::headless: client resize client_id=10 cols=183 rows=53 cell_width_px=0 cell_height_px=0
+2026-06-12T13:48:13.964392Z  INFO herdr::server::headless: client resize client_id=10 cols=234 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T13:48:18.824114Z  INFO herdr::server::headless: client resize client_id=10 cols=239 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T13:48:22.657048Z  INFO herdr::server::headless: client resize client_id=10 cols=234 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T13:48:24.619627Z  INFO herdr::server::headless: client resize client_id=10 cols=239 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T13:49:05.088607Z  INFO herdr::server::headless: client resize client_id=10 cols=234 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T13:49:26.333351Z  INFO herdr::server::headless: client resize client_id=10 cols=239 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T13:49:35.000219Z  INFO herdr::server::headless: client resize client_id=10 cols=234 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T14:02:17.385635Z  INFO herdr::server::headless: client resize client_id=10 cols=235 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T14:02:17.490594Z  INFO herdr::server::headless: client resize client_id=10 cols=239 rows=59 cell_width_px=0 cell_height_px=0
+2026-06-12T14:02:25.227063Z  INFO herdr::server::headless: client resize client_id=10 cols=239 rows=63 cell_width_px=0 cell_height_px=0
+2026-06-12T14:02:31.823444Z  INFO herdr::server::headless: client resize client_id=10 cols=134 rows=112 cell_width_px=0 cell_height_px=0
+2026-06-12T14:03:40.269468Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:03:40.747304Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:03:40.851649Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T14:03:41.412507Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:03:43.279578Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:03:43.737832Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:03:45.633935Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:03:46.087007Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:03:51.155799Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T14:03:53.124279Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:03:53.802324Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:03:59.055607Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:03:59.056504Z  INFO herdr::app::actions: copied double-clicked token to clipboard
+2026-06-12T14:03:59.068211Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T14:03:59.802217Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:04:00.132685Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:04:00.835824Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:04:05.898576Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T14:04:17.396309Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:04:17.397269Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:04:17.397660Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:04:17.397731Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:04:17.406703Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T14:04:17.406761Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:04:17.407176Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T14:04:17.407285Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:04:22.451702Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T14:04:33.115541Z  INFO herdr::app::actions: copied double-clicked token to clipboard
+2026-06-12T14:04:49.358085Z  INFO herdr::app::actions: copied selection to clipboard
+2026-06-12T14:10:41.905707Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T14:19:33.819681Z  INFO herdr::server::headless: client disconnected client_id=10
+2026-06-12T14:23:00.732485Z  INFO herdr::server::headless: client connected client_id=12 cols=129 rows=109 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-06-12T14:24:28.889090Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.894003Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.897080Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.897209Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.900301Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.900779Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.901147Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.901248Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.904229Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.904687Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.905052Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.908043Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.908150Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.908571Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.908893Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6540c0b4103565" tab_id="w6540c0b4103565:1"
+2026-06-12T14:24:28.915564Z  INFO herdr::server::headless: client detach requested via keybind client_id=12
+2026-06-12T14:24:28.917355Z  INFO herdr::server::headless: client disconnected client_id=12
+2026-06-12T14:24:33.948060Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T14:27:30.883046Z  INFO herdr::server::headless: server shutdown initiated
+2026-06-12T14:27:30.935829Z  INFO herdr::server::headless: completing server shutdown
+2026-06-12T14:27:30.971104Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/scarab5q/.config/herdr/session.json workspaces=3
+2026-06-12T14:27:30.971135Z  INFO herdr::server::headless: headless server exiting
+2026-06-12T14:27:30.982216Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=5 status="ExitStatus { code: 1, signal: None }"
+2026-06-12T14:27:31.439333Z  INFO herdr::pane: pane session terminated pane=5 pid=65919 signal=Terminate
+2026-06-12T14:27:31.441448Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=12 status="ExitStatus { code: 1, signal: None }"
+2026-06-12T14:27:31.465062Z  INFO herdr::pane: pane session terminated pane=12 pid=41114 signal=Hangup
+2026-06-12T14:27:31.467049Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=13 status="ExitStatus { code: 1, signal: None }"
+2026-06-12T14:27:31.490624Z  INFO herdr::pane: pane session terminated pane=13 pid=71991 signal=Hangup
+2026-06-12T14:27:31.492560Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=7 status="ExitStatus { code: 1, signal: None }"
+2026-06-12T14:27:31.516074Z  INFO herdr::pane: pane session terminated pane=7 pid=75820 signal=Hangup
+2026-06-12T14:27:31.518141Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=10 status="ExitStatus { code: 1, signal: None }"
+2026-06-12T14:27:31.541634Z  INFO herdr::pane: pane session terminated pane=10 pid=36013 signal=Hangup
+2026-06-12T14:27:31.544226Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=4 status="ExitStatus { code: 1, signal: None }"
+2026-06-12T14:27:31.567054Z  INFO herdr::pane: pane session terminated pane=4 pid=64083 signal=Hangup
+2026-06-12T14:27:31.855142Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=9 status="ExitStatus { code: 1, signal: None }"
+2026-06-12T14:27:32.174263Z  INFO herdr::pane: pane session terminated pane=9 pid=34977 signal=Kill
+2026-06-12T14:27:32.176708Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=11 status="ExitStatus { code: 1, signal: None }"
+2026-06-12T14:27:32.269628Z  INFO herdr::pane: pane session terminated pane=11 pid=36602 signal=Hangup
+2026-06-12T14:27:32.270310Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="server" outcome="completed" pid=37919

@@ -1,0 +1,20 @@
+2026-06-12T11:00:05.135034Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=70761
+2026-06-12T11:00:05.135092Z  INFO herdr::client: connecting to server path=/Users/scarab5q/.config/herdr/sessions/main/herdr-client.sock
+2026-06-12T11:00:05.349527Z  INFO herdr::client: handshake succeeded version=12 encoding=SemanticFrame
+2026-06-12T12:52:18.165199Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=70761
+2026-06-12T12:52:33.287276Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=20171
+2026-06-12T12:52:33.287347Z  INFO herdr::client: connecting to server path=/Users/scarab5q/.config/herdr/sessions/main/herdr-client.sock
+2026-06-12T12:52:33.375597Z  INFO herdr::client: handshake succeeded version=12 encoding=SemanticFrame
+2026-06-12T12:52:37.425874Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=20171
+2026-06-12T12:52:44.350916Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=21046
+2026-06-12T12:52:44.351010Z  INFO herdr::client: connecting to server path=/Users/scarab5q/.config/herdr/sessions/main/herdr-client.sock
+2026-06-12T12:52:44.533941Z  INFO herdr::client: handshake succeeded version=12 encoding=SemanticFrame
+2026-06-12T12:52:46.289601Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=21046
+2026-06-12T14:19:30.506206Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=28985
+2026-06-12T14:19:30.506431Z  INFO herdr::client: connecting to server path=/Users/scarab5q/.config/herdr/sessions/main/herdr-client.sock
+2026-06-12T14:19:30.580901Z  INFO herdr::client: handshake succeeded version=12 encoding=SemanticFrame
+2026-06-12T14:19:35.346080Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=28985
+2026-06-12T14:22:53.726781Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=29814
+2026-06-12T14:22:53.726973Z  INFO herdr::client: connecting to server path=/Users/scarab5q/.config/herdr/sessions/main/herdr-client.sock
+2026-06-12T14:22:53.751907Z  INFO herdr::client: handshake succeeded version=12 encoding=SemanticFrame
+2026-06-12T14:22:55.421785Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=29814

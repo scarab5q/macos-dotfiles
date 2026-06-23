@@ -116,7 +116,7 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export EDITOR='nvim'
+export EDITOR='hx'
 
 # Cached 1Password secrets — interactive-shell only. Background non-interactive
 # shells (scripts, hooks, `bash -c`) don't need these. The file is the plain
@@ -153,6 +153,7 @@ alias dockerstopall='docker stop $(docker ps -q) && docker rm $(docker ps -aq)'
 alias lzd='lazydocker'
 alias ghd='gh dash'
 alias jed='just --edit'
+alias handoff='~/scripts/handoff.sh'
 alias ls='eza'
 alias zr='zellij run --'
 alias ecl="emacsclient -a '' -c"
@@ -224,6 +225,10 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# mise: activates per-project tool versions when a mise.toml / mise.local.toml is present.
+# Loaded after nvm so mise wins inside mise-managed directories; nvm keeps owning everywhere else.
+eval "$(mise activate zsh)"
 
 cf() {
   /usr/bin/git --git-dir=/Users/scarab5q/.cfg/ --work-tree=/Users/scarab5q ls-tree --full-tree -r --full-name HEAD --format $HOME'/%(path)' | fzf -m --preview='bat --color=always {}' --bind 'enter:become(nvim {+})'
@@ -490,13 +495,75 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# Wrapper so `jj autoclear` dispatches to ~/scripts/jj-autoclear.
-# jj 0.41 has no external-subcommand support, so we intercept here.
+# jj wrapper. Two jobs:
+#  1. `jj autoclear` dispatches to ~/scripts/jj-autoclear (jj 0.41 has no
+#     external-subcommand support, so we intercept here).
+#  2. Serialize every jj invocation with flock on a lockfile in the shared repo
+#     store. Multiple agents in separate jj *workspaces* share one .jj/repo (op
+#     log + commit store), so concurrent jj commands race and produce divergent
+#     operations/changes. One exclusive lock per repo makes them take turns.
 jj() {
+  local root link store lock
+  # --ignore-working-copy: pure read, no snapshot op, so this lookup can't race.
+  root=$(command jj root --ignore-working-copy 2>/dev/null)
+  if [ -n "$root" ]; then
+    link="$root/.jj/repo"
+    # Main workspace: .jj/repo is a dir. Secondary workspace: it's a file
+    # pointing at the main repo. Either way all workspaces resolve to one lock.
+    [ -d "$link" ] && store="$link" || store="$(cat "$link" 2>/dev/null)"
+    [ -n "$store" ] && lock="$(dirname "$store")/.agent-jj.lock"
+  fi
+
+  local -a cmd
   if [ "${1:-}" = "autoclear" ]; then
     shift
-    command ~/scripts/jj-autoclear "$@"
+    cmd=(command ~/scripts/jj-autoclear "$@")
   else
-    command jj "$@"
+    cmd=(command jj "$@")
+  fi
+
+  # -w 30: a hung network op (push/fetch) can't block other panes forever.
+  if [ -n "$lock" ]; then
+    flock -x -w 30 "$lock" "${cmd[@]}"
+  else
+    "${cmd[@]}"
   fi
 }
+
+# herdr session picker. Offers an fzf list of named herdr sessions to attach to.
+# Invoke manually (e.g. `herdr_session_picker` or the `hp` alias below) — it no
+# longer runs on shell start. The HERDR_PANE_ID / SHLVL guards keep `exec herdr
+# session attach` from re-entering the picker inside spawned panes.
+herdr_session_picker() {
+  [[ -o interactive ]]              || return   # interactive only
+  [[ -z "$HERDR_PANE_ID" ]]         || return   # not already inside a herdr pane
+  command -v herdr >/dev/null       || { print -u2 "herdr not installed"; return 1; }
+  command -v fzf   >/dev/null       || { print -u2 "fzf not installed"; return 1; }
+
+  local sessions choice name
+  sessions=$(herdr session list --json 2>/dev/null | jq -r '
+    .sessions[]
+    | "\(.name)\t\(if .running then "running" else "stopped" end)\(if .default then " · default" else "" end)"')
+
+  choice=$(
+    {
+      [[ -n "$sessions" ]] && print -r -- "$sessions"
+      print -r -- $'➕ new session…'
+      print -r -- $'✕ skip (plain shell)'
+    } | fzf --prompt='herdr session ❯ ' --height=40% --reverse \
+            --header='Attach a herdr session (esc = plain shell)' \
+            --delimiter='\t' --with-nth=1,2
+  )
+  [[ -n "$choice" ]] || return                  # esc → plain shell
+
+  case "$choice" in
+    *'skip (plain shell)'*) return ;;
+    *'new session'*)
+      read -r "name?New session name: "
+      [[ -n "$name" ]] || return ;;
+    *) name="${choice%%$'\t'*}" ;;
+  esac
+
+  exec herdr session attach "$name"
+}
+alias hp='herdr_session_picker'

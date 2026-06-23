@@ -3,7 +3,7 @@
   "workspaces": [
     {
       "id": "w653e728c3a3ef3",
-      "custom_name": null,
+      "custom_name": "main",
       "identity_cwd": "/Users/scarab5q",
       "tabs": [
         {
@@ -45,47 +45,103 @@
               }
             },
             "7": {
-              "cwd": "/Users/scarab5q"
+              "cwd": "/Users/scarab5q/repos/arrow"
             }
           },
           "zoomed": false,
-          "focused": 7,
+          "focused": 5,
           "root_pane": 5
         }
       ],
       "active_tab": 1
     },
     {
-      "id": "w653e738416e784",
+      "id": "w6540c0b4103565",
+      "custom_name": "dev servers",
+      "identity_cwd": "/Users/scarab5q/repos/arrow",
+      "tabs": [
+        {
+          "custom_name": "hookdeck",
+          "layout": {
+            "Split": {
+              "direction": "Vertical",
+              "ratio": 0.5925926,
+              "first": {
+                "Split": {
+                  "direction": "Horizontal",
+                  "ratio": 0.5555556,
+                  "first": {
+                    "Pane": 9
+                  },
+                  "second": {
+                    "Pane": 11
+                  }
+                }
+              },
+              "second": {
+                "Split": {
+                  "direction": "Horizontal",
+                  "ratio": 0.496,
+                  "first": {
+                    "Pane": 10
+                  },
+                  "second": {
+                    "Pane": 12
+                  }
+                }
+              }
+            }
+          },
+          "panes": {
+            "11": {
+              "cwd": "/Users/scarab5q/repos/nsave",
+              "label": "mobile"
+            },
+            "12": {
+              "cwd": "/Users/scarab5q/repos/business-app",
+              "label": "business app"
+            },
+            "9": {
+              "cwd": "/Users/scarab5q/repos/arrow",
+              "label": "arrow"
+            },
+            "10": {
+              "cwd": "/Users/scarab5q",
+              "label": "hookdeck"
+            }
+          },
+          "zoomed": false,
+          "focused": 9,
+          "root_pane": 9
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w6540c4701c1e66",
       "custom_name": null,
-      "identity_cwd": "/Users/scarab5q",
+      "identity_cwd": "/Users/scarab5q/repos/arrow",
       "tabs": [
         {
           "custom_name": null,
           "layout": {
-            "Pane": 6
+            "Pane": 13
           },
           "panes": {
-            "6": {
-              "cwd": "/Users/scarab5q",
-              "agent_session": {
-                "source": "herdr:claude",
-                "agent": "claude",
-                "kind": "id",
-                "value": "2fa3abf4-96b4-48f8-986b-5f8d79cc27a0"
-              }
+            "13": {
+              "cwd": "/Users/scarab5q/repos/arrow"
             }
           },
           "zoomed": false,
-          "focused": 6,
-          "root_pane": 6
+          "focused": 13,
+          "root_pane": 13
         }
       ],
       "active_tab": 0
     }
   ],
-  "active": 0,
-  "selected": 0,
+  "active": 1,
+  "selected": 1,
   "agent_panel_scope": "AllWorkspaces",
   "sidebar_width": 26,
   "sidebar_section_split": 0.5,
