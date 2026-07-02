@@ -31,12 +31,18 @@ def --env pg-auth [] {
 # Run a SQL query and return a native nushell table.
 # SQL is piped to stdin (avoids -c quoting / paren-escaping headaches).
 # Columns are type-inferred by default; --raw keeps everything as strings.
+# --db overrides PGDATABASE for this call only (leaves $env.PGDATABASE alone).
 def --env pgq [
     query: string   # SQL to run
     --raw           # don't infer column types
+    --db: string = ""  # database override for this call
 ] {
     pg-auth
-    let out = ($query | psql --csv)
+    let out = if ($db | is-empty) {
+        $query | psql --csv
+    } else {
+        with-env {PGDATABASE: $db} { $query | psql --csv }
+    }
     if $raw { $out | from csv --no-infer } else { $out | from csv }
 }
 
@@ -47,13 +53,17 @@ def --env pg-tables [] {
 
 # Compose a query in helix (SQL highlighting via .sql extension), then run it
 # against the current PGDATABASE and return a nushell table. Empty/unsaved = no-op.
-def --env pgedit [] {
+def --env pgedit [
+    --db: string = ""  # database override for this call
+] {
     let f = ($nu.temp-path | path join $"pgq-(random chars --length 8).sql")
     hx $f
     if ($f | path exists) {
         let sql = (open $f | str trim)
         rm -f $f
-        if ($sql | is-not-empty) { pgq $sql }
+        if ($sql | is-not-empty) {
+            if ($db | is-empty) { pgq $sql } else { pgq $sql --db $db }
+        }
     }
 }
 
