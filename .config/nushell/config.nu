@@ -1,7 +1,10 @@
 # Nushell Configuration
 
-$env.config.edit_mode = 'vi'
-$env.config.keybindings = ($env.config.keybindings | append {
+
+$env.config = {
+  edit_mode: 'vi'
+  buffer_editor: 'hx'
+  keybindings: ($env.config.keybindings | append {
     name: clear_screen
     modifier: control
     keycode: char_y
@@ -9,15 +12,25 @@ $env.config.keybindings = ($env.config.keybindings | append {
     event: { send: ClearScreen }
 })
 
+}
+
 # ============================================================
 # ALIASES
 # ============================================================
 
 # Config editing
-alias zshconfig = nvim ~/.zshrc
-alias nuconfig = nvim ~/.config/nushell/config.nu
-alias nvimconfig = nvim ~/.config/nvim
-alias ohmyzsh = nvim ~/.oh-my-zsh
+def zshconfig [] {
+   run-external $env.config.buffer_editor ($env.HOME | path join ".config/nvim")
+}
+def nuconfig [] {
+   run-external $env.config.buffer_editor ($env.HOME | path join "/.config/nushell/config.nu" )
+} 
+def nvimconfig [] {
+   run-external $env.config.buffer_editor ($env.HOME | path join "/.config/nvim" )
+} 
+def ohmyzsh [] {
+   run-external $env.config.buffer_editor ($env.HOME | path join "/.oh-my-zsh" )
+} 
 
 # Reload config
 def renu [] { exec nu }
@@ -79,6 +92,43 @@ alias zr = zellij run --
 def ecl [...args] { emacsclient -a "" -c ...$args }
 
 # ============================================================
+# PORTED FROM ZSH (high-priority quick aliases / defs)
+# ============================================================
+
+# Simple aliases (no pipelines, no subcommand chaining — safe as aliases)
+# alias ls = eza
+alias j = just
+alias handoff = ~/scripts/handoff.sh
+alias ded = direnv edit
+alias checkai = hx /tmp/run.sh
+alias npm = sfw npm
+alias pnpm = sfw pnpm
+
+# mkdir + cd. `def --env` so the cd persists in the caller's scope.
+def --env mcd [dir: string] {
+    mkdir $dir
+    cd $dir
+}
+
+# Make /tmp/run.sh executable and run it. Pipe semantics differ from zsh's
+# `&&` — in nu, use `;` (continue on success; throws if first fails).
+def runai [] {
+    chmod +x /tmp/run.sh
+    /tmp/run.sh
+}
+
+# iOS simulator clipboard sync (zsh had these as aliases with pipes;
+# nu aliases can't contain pipes, so they must be defs).
+def simcopy [] { pbpaste | xcrun simctl pbcopy booted }
+def simpaste [] { xcrun simctl pbpaste booted | pbcopy }
+
+# jj/just subcommand shortcuts. `jj` and `just` are themselves wrappers in this
+# config, so `def --wrapped ... ...$rest` forwards flags through correctly.
+def --wrapped jjst [...rest] { jj st ...$rest }
+def --wrapped jst [...rest] { jj st ...$rest }
+def --wrapped jdev [...rest] { just dev ...$rest }
+
+# ============================================================
 # CUSTOM FUNCTIONS
 # ============================================================
 
@@ -89,7 +139,7 @@ def cf [] {
         | fzf -m --preview 'bat --color=always {}'
         | lines)
     if ($files | is-not-empty) {
-        nvim ...$files
+        hx ...$files
     }
 }
 
@@ -144,18 +194,9 @@ def aws-mfa [
 # INTEGRATIONS
 # ============================================================
 
-# fnm (node version manager) — set env vars, skip PATH (handled separately)
-for line in (fnm env --shell power-shell | lines | where {|l| ($l starts-with '$env:') and (not ($l =~ ':PATH '))}) {
-    let kv = ($line | parse '$env:{k} = "{v}"' | first)
-    load-env {($kv.k): $kv.v}
-}
-$env.PATH = ($env.PATH | prepend ($env.FNM_MULTISHELL_PATH | path join (if $nu.os-info.name == 'windows' {''} else {'bin'})))
-$env.config.hooks.env_change.PWD = (
-    $env.config.hooks.env_change.PWD? | append {
-        condition: {|| ['.nvmrc' '.node-version' 'package.json'] | any {|el| $el | path exists}}
-        code: {|| ^fnm use}
-    }
-)
+# fnm removed — mise (configured below) handles all node version management,
+# including .nvmrc / .node-version files in projects without a mise config.
+# See ~/.config/mise/config.toml for the idiomatic-version-file opt-in.
 
 # Starship prompt
 mkdir ($nu.data-dir | path join "vendor/autoload")
@@ -163,6 +204,15 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 
 # Zoxide (cd replacement)
 source ~/.zoxide.nu
+
+# mise: per-project tool versions. Refresh the activation script each launch
+# (so it tracks the installed mise binary), source it, then prime PATH right
+# away — `mise activate nu` only updates PATH via a pre-prompt hook, so without
+# this priming `nu -c` invocations would not see mise's tools.
+mkdir ~/.cache/mise
+^mise activate nu | save -f ~/.cache/mise/init.nu
+source ~/.cache/mise/init.nu
+mise_hook
 
 # Cargo/Rust
 source ~/.cargo/env.nu

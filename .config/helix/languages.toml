@@ -65,7 +65,17 @@ args = ["--stdio"]
 command = "zls"
 config = { enable_build_on_save = true, enable_inlay_hints = true, warn_style = true, highlight_global_var_declarations = true }
 
+[language-server.nu-lsp]
+command = "nu"
+args = ["--lsp"]
+
 # ---- languages ----
+
+[[language]]
+name = "nu"
+language-servers = ["nu-lsp"]
+formatter = { command = "nufmt", args = ["--stdin"] }
+auto-format = true
 
 [[language]]
 name = "typescript"
