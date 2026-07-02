@@ -23,14 +23,14 @@ def zshconfig [] {
    run-external $env.config.buffer_editor ($env.HOME | path join ".config/nvim")
 }
 def nuconfig [] {
-   run-external $env.config.buffer_editor ($env.HOME | path join "/.config/nushell/config.nu" )
-} 
+    run-external $env.config.buffer_editor ($env.HOME | path join ".config/nushell/config.nu")
+}
 def nvimconfig [] {
-   run-external $env.config.buffer_editor ($env.HOME | path join "/.config/nvim" )
-} 
+    run-external $env.config.buffer_editor ($env.HOME | path join ".config/nvim")
+}
 def ohmyzsh [] {
-   run-external $env.config.buffer_editor ($env.HOME | path join "/.oh-my-zsh" )
-} 
+    run-external $env.config.buffer_editor ($env.HOME | path join ".oh-my-zsh")
+}
 
 # Reload config
 def renu [] { exec nu }
@@ -43,13 +43,20 @@ alias lc = lazyconfig
 # Lazygit
 alias lg = lazygit
 
+# Rebuild the Steel-fork helix from source and refresh grammars
+def hx-steel-update [] {
+    git -C ~/src/helix-steel pull
+    cd ~/src/helix-steel; cargo xtask steel
+    hx --grammar fetch
+    hx --grammar build
+}
+
 # Git branch switcher with fzf
 def branches [] {
     let branch = (git branch
         | lines
-        | where { |line| not ($line | str starts-with "*") }
-        | each { |line| $line | str trim }
-        | str join "\n"
+        | where {|line| not ($line | str starts-with "*") }
+        | str trim
         | fzf --height=20% --reverse --info=inline
         | str trim)
     if ($branch | is-not-empty) {
@@ -134,7 +141,7 @@ def --wrapped jdev [...rest] { just dev ...$rest }
 
 # Dotfiles picker with fzf (cf command)
 def cf [] {
-    let fmt = $env.HOME + '/%(path)'
+    let fmt = $"($env.HOME)/%(path)"
     let files = (git --git-dir=($env.HOME | path join ".cfg") --work-tree=$env.HOME ls-tree --full-tree -r --full-name HEAD --format $fmt
         | fzf -m --preview 'bat --color=always {}'
         | lines)

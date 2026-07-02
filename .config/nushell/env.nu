@@ -56,8 +56,8 @@ $env.PATH = (
 )
 
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-mkdir $"($nu.cache-dir)"
-carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
+mkdir $nu.cache-dir
+carapace _carapace nushell | save --force ($nu.cache-dir | path join "carapace.nu")
 
 # SSH agent: point at Secretive's socket (Touch ID-backed keys in Secure Enclave).
 # Matches zsh's `export SSH_AUTH_SOCK=...` — no separate ssh-agent process needed.
@@ -75,9 +75,7 @@ let secrets_file = ($env.HOME | path join ".secrets")
 if ($secrets_file | path exists) {
     open --raw $secrets_file
     | lines
-    | where { |l| $l | str starts-with "export " }
-    | each { |l| $l | str substring 7.. }
-    | parse "{name}={value}"
+    | parse "export {name}={value}"
     | reduce -f {} { |it, acc| $acc | upsert $it.name ($it.value | str trim --char '"') }
     | load-env
 }
