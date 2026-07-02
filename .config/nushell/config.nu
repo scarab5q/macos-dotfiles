@@ -4,13 +4,24 @@
 $env.config = {
   edit_mode: 'vi'
   buffer_editor: 'hx'
-  keybindings: ($env.config.keybindings | append {
-    name: clear_screen
-    modifier: control
-    keycode: char_y
-    mode: [emacs vi_normal vi_insert]
-    event: { send: ClearScreen }
-})
+  keybindings: ($env.config.keybindings | append [
+    {
+      name: clear_screen
+      modifier: control
+      keycode: char_y
+      mode: [emacs vi_normal vi_insert]
+      event: { send: ClearScreen }
+    }
+    {
+      # Ctrl+O: open the current command line in buffer_editor (hx). Vi mode
+      # doesn't bind OpenEditor by default, so bind it across all modes.
+      name: edit_in_buffer
+      modifier: control
+      keycode: char_o
+      mode: [emacs vi_normal vi_insert]
+      event: { send: OpenEditor }
+    }
+  ])
 
 }
 
