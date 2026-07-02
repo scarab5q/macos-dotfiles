@@ -234,6 +234,9 @@ source ~/.local/share/atuin/init.nu
 # Broot file manager
 source ~/.config/nushell/broot.nu
 
+# Postgres (psql → nushell tables, password via 1Password)
+source ~/.config/nushell/pg.nu
+
 # ============================================================
 # COMPLETIONS
 # ============================================================
