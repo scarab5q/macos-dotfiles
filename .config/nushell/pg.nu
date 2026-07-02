@@ -45,6 +45,18 @@ def --env pg-tables [] {
     pgq "select table_schema, table_name from information_schema.tables where table_schema not in ('pg_catalog', 'information_schema') order by 1, 2"
 }
 
+# Compose a query in helix (SQL highlighting via .sql extension), then run it
+# against the current PGDATABASE and return a nushell table. Empty/unsaved = no-op.
+def --env pgedit [] {
+    let f = ($nu.temp-path | path join $"pgq-(random chars --length 8).sql")
+    hx $f
+    if ($f | path exists) {
+        let sql = (open $f | str trim)
+        rm -f $f
+        if ($sql | is-not-empty) { pgq $sql }
+    }
+}
+
 # Raw psql pinned to a database. No args = interactive session; passes through
 # any flags (e.g. `tmsql -c "select 1"`). For nushell tables use pgq instead.
 def --env --wrapped tmsql [...args] {
