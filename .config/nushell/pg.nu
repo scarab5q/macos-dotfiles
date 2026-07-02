@@ -12,11 +12,16 @@ $env.PGPORT = "5455"
 $env.PGUSER = "postgres"
 $env.PGDATABASE = "tms"
 
-# 1Password secret reference for the password — EDIT to your vault/item/field.
+# Local dev password (the docker postgres is just "postgres"). For a remote/prod
+# DB: clear this (`hide-env PGPASSWORD`) and point PG_OP_REF at a real 1Password
+# item — pg-auth then fetches it once per session.
+$env.PGPASSWORD = "postgres"
+
+# 1Password ref, used only when PGPASSWORD is empty. EDIT to your vault/item/field.
 # Find it with: `op item get <item> --format json | get fields`
 const PG_OP_REF = "op://Private/arrow-postgres/password"
 
-# Load the password from 1Password once per session into PGPASSWORD.
+# Load the password from 1Password into PGPASSWORD if it isn't already set.
 def --env pg-auth [] {
     if ($env.PGPASSWORD? | is-empty) {
         $env.PGPASSWORD = (op read $PG_OP_REF | str trim)
